@@ -1,4 +1,4 @@
-WRECK - Webtool Reporting Eve-online Corporation Killmails
+**WRECK - Webtool Reporting Eve-online Corporation Killmails**
 
 
 * Any use of this software should comply with CCP License Agreement detailed here :
