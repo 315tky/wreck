@@ -1,0 +1,122 @@
+version: '3.7'
+
+services:
+  wreck_app:
+    image: wreck_app:prod
+    container_name: wreck_app
+    build:
+      context: ./app
+      dockerfile: Dockerfile.rails
+      args:
+        - USER_ID
+        - GROUP_ID
+        - USERNAME
+        - USERGROUP
+        - HOMEDIR
+    deploy:
+      resources:
+        limits:
+          memory: 1024m
+    environment:
+      - BASE64_ENCODE
+      - REFRESH_TOKEN
+      - POKILL_PROD_USERNAME
+      - POKILL_PROD_PASSWORD
+      - POKILL_PROD_DBNAME
+      - POKILL_PROD_HOST
+      - EVE_PROD_USERNAME
+      - EVE_PROD_PASSWORD
+      - EVE_PROD_DBNAME
+      - EVE_PROD_HOST
+      - USER_ID
+      - GROUP_ID
+      - USERNAME
+      - USERGROUP
+      - HOMEDIR
+      - RAILS_ENV
+    command: bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
+    volumes:
+      - ./tasks/eve_mysql_data_import:/rails/lib/eve_mysql_data_import
+      - wreck_tmp_data:/wreck/tmp/sockets
+    depends_on:
+      - wreck_pg_db
+      - wreck_mysql_db
+
+  wreck_tasks:
+    image: wreck_tasks:prod
+    container_name: wreck_tasks
+    build:
+      context: ./tasks
+      dockerfile: Dockerfile.tasks
+    deploy:
+      resources:
+        limits: 
+          memory: 128m
+    depends_on:
+      - wreck_app 
+    command: crond -f -l 8 -L /var/log/wreck/cron.log
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/log/wreck:/var/log/wreck
+      - ./tasks/cron_tasks/1min:/etc/periodic/1min/:ro
+      - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
+      - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
+
+  wreck_nginx_proxy:
+    image: wreck_nginx_proxy:prod
+    container_name: wreck_nginx_proxy
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "80:80"
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+    depends_on:
+      - wreck_app
+    volumes:
+      - wreck_tmp_data:/wreck/tmp/sockets
+
+  wreck_pg_db:
+    image: wreck_postgres:prod
+    container_name: wreck_postgres
+    build:
+      context: ./databases
+      dockerfile: Dockerfile.pg
+    ports:
+      - 5432
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    volumes:
+      - wreck_pg_data:/var/lib/postgresql/data
+
+  wreck_mysql_db:
+    image: wreck_mysql:prod
+    container_name: wreck_mysql
+    build:
+      context: ./databases
+      dockerfile: Dockerfile.mysql
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+    environment:
+      - MYSQL_DATABASE
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+    volumes:
+      - wreck_mysql_data:/var/lib/mysql
+
+volumes:
+  wreck_pg_data:
+  wreck_mysql_data:
+  wreck_tmp_data:
