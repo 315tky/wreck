@@ -1,0 +1,8 @@
+FROM nginx:1.17.8
+
+RUN rm -f /etc/nginx/conf.d/*
+
+ADD nginx-proxy.conf /etc/nginx/conf.d/wreck.conf
+
+# ビルド完了後にNginxを起動
+CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
