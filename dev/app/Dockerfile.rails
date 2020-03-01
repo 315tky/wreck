@@ -26,7 +26,7 @@ RUN chown -R $USERNAME:$USERGROUP /wreck
 
 # install bundler and gem files using bundler
 COPY rails/Gemfile* ./
-RUN gem install bundler:2.0.2 && bundle install
+RUN gem install bundler:2.1.4 && bundle install
 
 #USER $USER_ID
 # Can maybe lose all the user and group stuff, especially in Prod.. need to test it without - nmd - 27th Feb 2020

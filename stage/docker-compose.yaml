@@ -69,7 +69,7 @@ services:
       context: ./proxy
       dockerfile: Dockerfile.nginx
     ports:
-      - "80:80"
+      - "8181:8181"
     deploy:
       resources:
         limits:

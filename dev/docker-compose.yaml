@@ -1,9 +1,9 @@
 version: '3.7'
 
 services:
-  wreck_app:
+  wreck_app_dev:
     image: wreck_app:dev
-    container_name: wreck_app
+    container_name: wreck_app_dev
     build:
       context: ./app
       dockerfile: Dockerfile.rails
@@ -38,12 +38,12 @@ services:
       - ./app/rails:/wreck
       - wreck_tmp_data:/wreck/tmp/sockets
     depends_on:
-      - wreck_pg_db
-      - wreck_mysql_db
+      - wreck_pg_db_dev
+      - wreck_mysql_db_dev
 
-  wreck_cron:
+  wreck_cron_dev:
     image: wreck_cron:dev
-    container_name: wreck_cron
+    container_name: wreck_cron_dev
     build:
       context: ./tasks
       dockerfile: Dockerfile.tasks
@@ -52,7 +52,7 @@ services:
         limits: 
           memory: 128m
     depends_on:
-      - wreck_app 
+      - wreck_app_dev
     command: crond -f -l 8 -L /var/log/wreck/cron.log
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
@@ -60,26 +60,26 @@ services:
       - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
 
-  wreck_nginx_proxy:
+  wreck_nginx_proxy_dev:
     image: wreck_nginx:dev 
-    container_name: wreck_nginx_proxy
+    container_name: wreck_nginx_proxy_dev
     build:
       context: ./proxy
       dockerfile: Dockerfile.nginx
     ports:
-      - "80:80"
+      - "8080:8080"
     deploy:
       resources:
         limits:
           memory: 128m
     depends_on:
-      - wreck_app
+      - wreck_app_dev
     volumes:
       - wreck_tmp_data:/wreck/tmp/sockets
 
-  wreck_pg_db:
+  wreck_pg_db_dev:
     image: wreck_postgres:dev
-    container_name: wreck_postgres
+    container_name: wreck_postgres_dev
     build:
       context: ./databases
       dockerfile: Dockerfile.pg
@@ -96,9 +96,9 @@ services:
     volumes:
       - wreck_pg_data:/var/lib/postgresql/data
 
-  wreck_mysql_db:
+  wreck_mysql_db_dev:
     image: wreck_mysql:dev
-    container_name: wreck_mysql
+    container_name: wreck_mysql_dev
     build:
       context: ./databases
       dockerfile: Dockerfile.mysql

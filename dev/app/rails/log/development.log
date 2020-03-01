@@ -298,3 +298,1243 @@ Entrypoint application = js/application-bbe9c4a129ab949e0636.js js/application-b
 Completed 200 OK in 7861ms (Views: 7817.9ms | ActiveRecord: 3.7ms | Allocations: 26665)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3139175137443385110)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3139175137443385110)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3139175137443385110)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3139175137443385110)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3139175137443385110)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3139175137443385110)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-03-01 08:59:34 +0000
+Cannot render console from 192.168.176.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[35m (16.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-03-01 07:59:34.713807"]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-29 08:59:34.732141"]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-23 08:59:34.733368"]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-01 08:59:34.734253"]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" ORDER BY "killmails"."killmail_time" DESC[0m
+  ↳ app/views/home/index.html.erb:15
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 13.7ms | ActiveRecord: 20.0ms | Allocations: 19299)
+
+
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/corporations/98473505/killmails/recent/?datasource=tranquility&page=1&token= response_code=200 return_code=ok total_time=1.669335
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (1.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81970191], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.7ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81970145], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81955058], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81955043], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81955036], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81955025], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81954991], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81953513], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81908591], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81908575], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81908064], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81908053], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81895768], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81895747], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81873875], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81873871], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81819808], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81819808], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81811486], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81810439], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81805733], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81805722], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81805705], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81777495], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81777477], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81773885], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81773844], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81761895], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81720635], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81720601], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81702368], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81702345], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81690442], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81681701], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81672276], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81672250], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81672244], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81672222], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81672202], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81671549], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81671325], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81654747], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81654708], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81646653], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81646531], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81596357], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81596348], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81587306], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81585223], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81585210], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81583321], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81583316], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81583294], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81582931], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81582927], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81567742], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81567717], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81567712], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81548834], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81548825], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81546441], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81546416], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81541891], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81541731], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81525176], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81525166], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81525122], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81525081], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81520287], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81520191], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81520029], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81520014], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81476397], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81454059], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81454044], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81443103], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81443086], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81423017], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81422976], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81416431], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81416387], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81416377], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81416367], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81411029], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81409264], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81409233], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81409219], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81409148], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81404853], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81404827], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81404815], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81367336], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366830], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366816], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366783], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366761], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366381], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366334], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81366314], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81365996], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81365991], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81364779], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81349970], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81349927], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81349915], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81349889], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81317514], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81317463], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81316830], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81315570], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81315566], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81278396], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81278283], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81278222], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81278216], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81278149], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81270129], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81270114], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81267312], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81267150], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81267118], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81263271], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81263251], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81245392], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81245375], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81245360], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81245341], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81245335], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81194854], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81158061], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81158052], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81158015], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81143311], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81127971], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81127967], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81127963], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81115960], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81115950], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81112907], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81100592], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81089183], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81089110], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81089107], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81088438], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81069874], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81069872], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81068598], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81068593], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81067974], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81039744], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81039556], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81038917], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81038185], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81029029], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81021942], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81021925], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81021918], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81015302], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81007648], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81007644], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81007612], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 81007608], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996252], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996216], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996117], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996108], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996075], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996072], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996050], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996033], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80996003], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80992671], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80992665], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80989340], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80989328], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80988638], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80988620], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80978869], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80977764], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80977722], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80971109], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80971076], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80970455], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80970338], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80970332], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80970310], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80964640], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80964389], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80964388], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80954019], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80953993], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80953970], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (1.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80952543], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80942972], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80942962], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80942954], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80936068], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935882], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935875], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935851], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935850], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935843], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935809], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80935796], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934623], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934612], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934604], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934602], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934209], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80934015], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.1ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80933984], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80930963], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80930947], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80930018], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80929881], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80929674], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80929669], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80929660], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.6ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80901264], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897799], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.7ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897794], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897746], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897723], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897699], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80897524], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80883673], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80883657], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80883649], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80883628], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80882242], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80882233], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80882227], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80881842], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80881834], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80881267], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80881245], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80879831], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80877794], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80877758], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80873774], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80865832], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80865812], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860834], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860816], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860368], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860367], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860351], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80860315], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80853970], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80853652], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80853632], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80851167], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80851153], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80845811], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80845780], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80844667], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80843567], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80841144], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80840755], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80840702], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80838956], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80838947], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80838041], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80837398], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80837392], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80834447], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80834412], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80817737], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80817730], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80816443], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80812622], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804426], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804408], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804400], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804138], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804124], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804117], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80804116], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80796300], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80796294], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80796140], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80796138], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80795226], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80795204], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80794732], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80794725], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80792892], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80792851], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80790412], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80790406], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80790320], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80790307], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80790261], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80789615], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80787857], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80787841], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (9.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80754624], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80753564], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80753542], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80736027], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80733062], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80731308], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80720327], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80720319], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80720296], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80717966], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80717926], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80717645], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80715250], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80715204], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80710684], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80642095], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80642082], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80631105], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80631090], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80630965], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80630954], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80630336], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80629999], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80615163], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80614984], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80614983], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80611458], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80611263], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80553507], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80536276], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80535798], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80535768], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80530477], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80487284], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80487278], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80482648], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438354], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438354], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438244], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438244], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438118], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438118], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438114], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438114], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.7ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438108], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438108], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438107], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438107], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438106], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438106], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438105], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438105], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438102], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438102], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438078], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438078], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438076], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438076], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438072], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438072], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438071], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (2.0ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438071], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438053], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80438053], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80420448], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80392128], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80363222], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80358993], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80358992], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80356816], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80356729], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80356329], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.5ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80344916], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80342370], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336522], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336521], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336439], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336438], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336426], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80336418], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80327196], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80324547], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80324530], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80323894], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80323869], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80318766], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80318725], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80318721], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80318682], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80318658], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80304258], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80304213], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80302794], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80302757], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80298534], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80298529], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80298224], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80286712], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80286669], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80286650], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80286649], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80286630], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80270948], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80254426], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80254421], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80254379], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.2ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80254104], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80253903], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80253887], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80251828], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80251823], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80251502], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80251466], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80251465], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80241086], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80241068], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+  [1m[36mKillmail Load (0.4ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" WHERE "killmails"."killmail_id" = $1 LIMIT $2[0m  [["killmail_id", 80232922], ["LIMIT", 1]]
+  ↳ lib/esi-get-recent-corp-kills.rb:57:in `block in check_db'
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81970191/1f09523b7113bfc98862d680027623b355063c7b/?datasource=tranquility response_code=200 return_code=ok total_time=0.28121
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81970145/0050b6e2bac102a983976a9589b0aa8983334948/?datasource=tranquility response_code=200 return_code=ok total_time=0.298599
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81955058/e0b4ed6cab75880105ee0652416ba796b67c18db/?datasource=tranquility response_code=200 return_code=ok total_time=0.305775
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81955043/e0216a6eeb6f075cb933d276f93fc39a2018c145/?datasource=tranquility response_code=200 return_code=ok total_time=0.294735
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81955036/ee762dac7fab4de3a7b8fd4925746754bd678327/?datasource=tranquility response_code=200 return_code=ok total_time=0.314051
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81955025/341025acc92e2f8f5d19d0acc4ed7ca097786631/?datasource=tranquility response_code=200 return_code=ok total_time=0.30536
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81954991/6c8bc7aa590d2b1fc61c664abbafc78879edaa0c/?datasource=tranquility response_code=200 return_code=ok total_time=0.31911
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81953513/f10ba985c314b4503a9affdc9bf9b75a8b433057/?datasource=tranquility response_code=200 return_code=ok total_time=0.28981
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81908591/f1ffb13661b19704360e087008985af352db94c1/?datasource=tranquility response_code=200 return_code=ok total_time=0.272652
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81908575/a1f99d48434b230d2487fa70cff336cc4569d17f/?datasource=tranquility response_code=200 return_code=ok total_time=0.3135
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81908064/77b864264ba98c5422566110172470fe33e1d085/?datasource=tranquility response_code=200 return_code=ok total_time=0.320822
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81908053/7d7adff4e15881e4dc8425b5e213d65b566d3cf0/?datasource=tranquility response_code=200 return_code=ok total_time=0.317021
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81895768/00a2dda4884fe10fb5abd566970dbb1a5b7b35fd/?datasource=tranquility response_code=200 return_code=ok total_time=0.356983
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81895747/f1c6f48d221581d028ed82aff38b83b0d208155e/?datasource=tranquility response_code=200 return_code=ok total_time=0.319161
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81873875/b74d839497f521570a32ea07a003be15f2dd3a08/?datasource=tranquility response_code=200 return_code=ok total_time=0.312682
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81873871/85dd4ec52b5362428fad0154fcd7a2db163980ef/?datasource=tranquility response_code=200 return_code=ok total_time=0.300493
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81819808/6627102ee705e410cf94407a7538cca3b47345b8/?datasource=tranquility response_code=200 return_code=ok total_time=0.316386
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81811486/e870ebad03b1ebe31c87307d6ac17d823176448a/?datasource=tranquility response_code=200 return_code=ok total_time=0.307132
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81810439/5238da17f1c73350d454cdd3d5970f94df182aa9/?datasource=tranquility response_code=200 return_code=ok total_time=0.273988
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81805733/c6227e24eec093f45f33aaff011a4a910c950533/?datasource=tranquility response_code=200 return_code=ok total_time=0.290043
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81805722/0d4907a3814012a15ecd12d90b82b711ae026b93/?datasource=tranquility response_code=200 return_code=ok total_time=0.304531
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81805705/cd94f66dca942d81675c1831771f68711ff728b4/?datasource=tranquility response_code=200 return_code=ok total_time=0.303431
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81777495/ea5bd2393eeae395381eb0b3fdbd2abd81e14e39/?datasource=tranquility response_code=200 return_code=ok total_time=0.307995
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81777477/c940c8ee4f924a7f3335f049c98add46f0eaad40/?datasource=tranquility response_code=200 return_code=ok total_time=0.295143
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81773885/cb572d827bf5cb11d5f33206533551fbcdfc95bf/?datasource=tranquility response_code=200 return_code=ok total_time=0.304531
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81773844/1173497556d55a432cb1ada3afa6b0b76ff3f3f8/?datasource=tranquility response_code=200 return_code=ok total_time=0.31122
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81761895/ddc2deb85a6ad93d587696e2bc0b58d653b5a4cd/?datasource=tranquility response_code=200 return_code=ok total_time=0.353836
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81720635/8d297069b4fa0f8c7c7372fd05380a223aa0a849/?datasource=tranquility response_code=200 return_code=ok total_time=0.288554
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81720601/98e6b3869f8c1e8ab273d13776557a3bce27b4f6/?datasource=tranquility response_code=200 return_code=ok total_time=0.296105
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81702368/bacb0366157ee7d5d16751abd3b20ecfc0234c4c/?datasource=tranquility response_code=200 return_code=ok total_time=0.304352
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81702345/ab7ef8bf385270bf24a74dc7efac2f163ba2492a/?datasource=tranquility response_code=200 return_code=ok total_time=0.27319
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81690442/c3b5dacfc2702cb8590154cd35f3a9127d214c92/?datasource=tranquility response_code=200 return_code=ok total_time=0.721403
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81681701/cec0e008664497d85e8e75602175cb17eed1e961/?datasource=tranquility response_code=200 return_code=ok total_time=0.295954
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81672276/c38d7835b84c5ddcdc8363277e815889c2bbfee2/?datasource=tranquility response_code=200 return_code=ok total_time=0.356536
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81672250/8005e6a4bd1a8a50e639c2774399224b12b9c76b/?datasource=tranquility response_code=200 return_code=ok total_time=0.306608
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81672244/f9360753d3544befbf2ba499af20fd6d85342380/?datasource=tranquility response_code=200 return_code=ok total_time=0.322496
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81672222/2086a7e9e27fc91468e83073a5fbe190c2e47dc1/?datasource=tranquility response_code=200 return_code=ok total_time=0.326157
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81672202/626c5d6786e491de9e7dc4b836b6ed8f13f0d244/?datasource=tranquility response_code=200 return_code=ok total_time=0.335674
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81671549/2bc51299a61dee6a93c02f02f1a73ae0dca1017d/?datasource=tranquility response_code=200 return_code=ok total_time=0.30202
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81671325/c567817b417146e5442d4f6040ebe9cda6ce7e1b/?datasource=tranquility response_code=200 return_code=ok total_time=0.342077
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81654747/a45d5b1ebe91af4243e7503bc9ca8af2748d74a3/?datasource=tranquility response_code=200 return_code=ok total_time=0.303336
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81654708/a468459cee85a72e66b943dcafbcd7fb611c6342/?datasource=tranquility response_code=200 return_code=ok total_time=0.349811
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81646653/f13dc97ecb7bfee7b1b018f1742e285f8577f887/?datasource=tranquility response_code=200 return_code=ok total_time=0.292589
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81646531/f29a17f3d1686630a3962c1e53219da471f92ed9/?datasource=tranquility response_code=200 return_code=ok total_time=0.291047
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81596357/86d291072a88954e71ac57caf80635c290c8ab59/?datasource=tranquility response_code=200 return_code=ok total_time=0.448059
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81596348/ea71d4de99963e91a495f58ece999c60487dce49/?datasource=tranquility response_code=200 return_code=ok total_time=0.283037
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81587306/aab1592037dbafeea16fe11532922cfb7aa79395/?datasource=tranquility response_code=200 return_code=ok total_time=0.288907
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81585223/6501fb6b5a0613079811ee0d4a34d9b151c8ce47/?datasource=tranquility response_code=200 return_code=ok total_time=0.269645
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81585210/2336fb045c507db5d2c638ad52a918fc10df7b78/?datasource=tranquility response_code=200 return_code=ok total_time=0.287128
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81583321/bfd523a854ff05933337e3eb922ebe5c6cc80168/?datasource=tranquility response_code=200 return_code=ok total_time=0.309261
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81583316/0b165ab4375a4de5858613727a13167ff2889661/?datasource=tranquility response_code=200 return_code=ok total_time=0.312943
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81583294/b4cc4dca664ff1d3f29126d8583f5be1b30734a8/?datasource=tranquility response_code=200 return_code=ok total_time=0.344452
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81582931/db2fb1945395f6fd1093183386457e5ca4f32d7f/?datasource=tranquility response_code=200 return_code=ok total_time=0.315083
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81582927/ff6e579255cf80bb9a987a888fb8cd472bd90bb8/?datasource=tranquility response_code=200 return_code=ok total_time=0.296583
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81567742/d5bb35847878f366088f64b5ceef970e08f47a92/?datasource=tranquility response_code=200 return_code=ok total_time=0.309365
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81567717/858d8347a0e1c3def2ec624f583bbef5f580dd56/?datasource=tranquility response_code=200 return_code=ok total_time=0.549154
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81567712/4aef152255421b7220fd2772e5568ab5e8a5eb11/?datasource=tranquility response_code=200 return_code=ok total_time=0.322287
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81548834/45da98fa5bfb5d044996891b01ff67e277945b56/?datasource=tranquility response_code=200 return_code=ok total_time=0.300659
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81548825/334733bc5fa331156500bc65c466b71fe0c09009/?datasource=tranquility response_code=200 return_code=ok total_time=0.317449
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81546441/f5d73bcb1377572e03ab9a746d8455762411dfcb/?datasource=tranquility response_code=200 return_code=ok total_time=0.351641
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81546416/3e99cdb839ac2fcbc2059d02aaabe7ef92954655/?datasource=tranquility response_code=200 return_code=ok total_time=0.350192
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81541891/ef59a5e2ce9d639fc968225cdb8ec144553ce6c1/?datasource=tranquility response_code=200 return_code=ok total_time=0.328723
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81541731/9da3450dff12a38c3f3a5e101ce21a1e81b79bbd/?datasource=tranquility response_code=200 return_code=ok total_time=0.283892
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81525176/0e084b9df8fc2a42a8bbfb91743c43d0571908d5/?datasource=tranquility response_code=200 return_code=ok total_time=0.287526
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81525166/7a62c8563ae61d092c05f790236dba52ee184c48/?datasource=tranquility response_code=200 return_code=ok total_time=0.423352
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81525122/7195c9f1837e3687575286df461b1d56aee1c680/?datasource=tranquility response_code=200 return_code=ok total_time=0.373336
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81525081/9cfa9e255fe1aafaeb43f252022e2715a8ddf8ba/?datasource=tranquility response_code=200 return_code=ok total_time=0.293924
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81520287/c1b81a83b147d24343a8a2f45ed2df02153edf89/?datasource=tranquility response_code=200 return_code=ok total_time=0.321541
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81520191/78cc111dcbc9907fb0487d1f0d7d97398495262b/?datasource=tranquility response_code=200 return_code=ok total_time=0.298656
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81520029/e34711b8885c2a2777b91a90ee580a88e6f6024f/?datasource=tranquility response_code=200 return_code=ok total_time=0.316802
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81520014/3a18e67e410c764db855fc9a31b15c9b0950f42d/?datasource=tranquility response_code=200 return_code=ok total_time=0.314301
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81476397/6b70a40d3cd9db1c514c96ebc44921b010faf951/?datasource=tranquility response_code=200 return_code=ok total_time=0.310762
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81454059/6f5cfdc63732e081911de106d22fbf0b76ef4f64/?datasource=tranquility response_code=200 return_code=ok total_time=0.29675
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81454044/5bdc9f0d0885d80093d166c74cacb21c867f4498/?datasource=tranquility response_code=200 return_code=ok total_time=0.283078
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81443103/354e3c8a89882e4c019e58b06add4e8f9d1227bf/?datasource=tranquility response_code=200 return_code=ok total_time=0.278569
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81443086/b929496f668d0fe06519b9df074f6e61dcf65dc9/?datasource=tranquility response_code=200 return_code=ok total_time=0.286222
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81423017/43db408b976bde3f25edc51d017e174af965f9f6/?datasource=tranquility response_code=200 return_code=ok total_time=0.288496
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81422976/ba8f32fa62761318aaf187ad5da0fac7ceb51873/?datasource=tranquility response_code=200 return_code=ok total_time=0.433319
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81416431/e096b718af962d18b07b06488963810a7f931f47/?datasource=tranquility response_code=200 return_code=ok total_time=0.51222
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81416387/8a62f5eb230c7968d47d929abaf930cbef1743d8/?datasource=tranquility response_code=200 return_code=ok total_time=0.314456
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81416377/387d6a79ff2c11fea086e6badba33cad5897de94/?datasource=tranquility response_code=200 return_code=ok total_time=0.287983
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81416367/d6e5098c3872ae7a0e81e0b5f3911939f33aaae4/?datasource=tranquility response_code=200 return_code=ok total_time=0.310689
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81411029/99b1748d90a8982ed0fc57f3f458d4969b6e80ad/?datasource=tranquility response_code=200 return_code=ok total_time=0.304835
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81409264/a0bca50ec8bf1a26ec36280ce81c60c458180b38/?datasource=tranquility response_code=200 return_code=ok total_time=0.320359
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81409233/efb5cc8f0d981a0e316099068f1da4e16776b7dd/?datasource=tranquility response_code=200 return_code=ok total_time=0.314272
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81409219/11bad5a5596057f7c6cb0f21c243d8a63b6696a2/?datasource=tranquility response_code=200 return_code=ok total_time=0.29453
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81409148/bfac8e1f5449fc6c27a8ee1ec4b13eefd1a6ec19/?datasource=tranquility response_code=200 return_code=ok total_time=0.436764
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81404853/3a1ab1e74ae6a215d360f624b9d96ba83bc7c1ff/?datasource=tranquility response_code=200 return_code=ok total_time=0.320442
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81404827/692b33e4eb41642e6d20ec0d7832db0ef3cf8986/?datasource=tranquility response_code=200 return_code=ok total_time=0.292701
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81404815/02a227b930d96c9c2f6a2a3865acfc9326348859/?datasource=tranquility response_code=200 return_code=ok total_time=0.309049
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81367336/f9bb23a399fd412f1d647de4bf4a8e3a2ccb2777/?datasource=tranquility response_code=200 return_code=ok total_time=0.292881
+ETHON: performed EASY effective_url=https://esi.evetech.net/latest/killmails/81366830/d2d49183659caf73a403af7bbba57b5b20eedf48/?datasource=tranquility response_code=200 return_code=ok total_time=0.307971
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3139175137443385110)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateKillmails (20200208063747)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "killmails" ("id" bigserial primary key, "killmail_id" integer, "killmail_time" timestamp, "solar_system_id" integer, "victim_corporation_id" integer, "victim_damage_taken" integer, "victim_position" jsonb, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200208063747"]]
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddVictimIdColumnToKillmail (20200208092146)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "killmails" ADD "victim_id" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "killmails" ADD "victim_ship_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200208092146"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateKillmailAttackers (20200208120442)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "killmail_attackers" ("id" bigserial primary key, "killmail_id" integer, "attacker_id" integer, "corporation_id" integer, "alliance_id" integer, "damage_done" integer, "final_blow" boolean, "security_status" integer, "ship_type_id" integer, "weapon_type_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200208120442"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateKillmailItems (20200209013643)
+  [1m[35m (8.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "killmail_items" ("id" bigserial primary key, "killmail_id" integer, "item_type_id" character varying, "flag" integer, "quantity_destroyed" integer, "quantity_dropped" integer, "singleton" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200209013643"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToKillmailTable (20200209015548)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_killmails_on_killmail_id" ON "killmails"  ("killmail_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200209015548"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToKillMailItemTable (20200209072020)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "killmail_item_unique_index" ON "killmail_items"  ("flag", "item_type_id", "killmail_id", "quantity_destroyed", "quantity_dropped")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200209072020"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToKillMailAttackerTable (20200209073356)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_killmail_attackers_on_killmail_id_and_attacker_id" ON "killmail_attackers"  ("killmail_id", "attacker_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200209073356"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolarsystems (20200210025235)
+  [1m[35m (9.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "solarsystems" ("id" bigserial primary key, "system_id" integer, "system_name" text, "sun_type_id" integer, "security" decimal, "security_class" text, "region_id" integer, "constellation_id" integer, "x_coord" decimal, "y_coord" decimal, "z_coord" decimal, "radius" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210025235"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnNameSolarSystem (20200210033853)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "solarsystems" RENAME COLUMN "system_id" TO "solar_system_id"[0m
+  [1m[36mprimary::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210033853"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRegions (20200210041054)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "region_name" text, "region_id" integer, "constellation_id" integer, "x_coord" decimal, "y_coord" decimal, "z_coord" decimal, "radius" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210041054"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConstellations (20200210041613)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "constellations" ("id" bigserial primary key, "constellation_name" text, "region_id" integer, "constellation_id" integer, "x_coord" decimal, "y_coord" decimal, "z_coord" decimal, "radius" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210041613"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumnFromRegionTable (20200210072251)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "regions" DROP COLUMN "constellation_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210072251"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItems (20200210104401)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "type_id" integer, "group_id" integer, "type_name" text, "description" text, "mass" decimal, "volume" decimal, "capacity" decimal, "portionSize" integer, "race_id" integer, "base_price" decimal, "published" integer, "market_group_id" integer, "icon_id" integer, "sound_id" integer, "graphic_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (25.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210104401"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnNameItemTable (20200210110219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "items" RENAME COLUMN "portionSize" TO "portion_size"[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210110219"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFlags (20200210111750)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "flags" ("id" bigserial primary key, "flag_id" integer, "flag_name" text, "flag_text" text, "order_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210111750"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnKillMailItemTable (20200210113639)
+  [1m[35m (10.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "killmail_items" RENAME COLUMN "flag" TO "flag_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210113639"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnTypeIdItemTable (20200210114656)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" RENAME COLUMN "type_id" TO "item_type_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200210114656"]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCharacters (20200212053730)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.0ms)[0m  [1m[35mCREATE TABLE "characters" ("id" bigserial primary key, "character_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200212053730"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to UniqueIndexCharacterTable (20200212053800)
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_characters_on_character_id" ON "characters"  ("character_id")[0m
+  [1m[36mprimary::SchemaMigration Create (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200212053800"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsCharacterTable (20200213002226)
+  [1m[35m (15.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "characters" ADD "alliance_id" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "characters" ADD "ancestry" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "characters" ADD "birthday" timestamp[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "characters" ADD "bloodline" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "characters" ADD "corporation_id" integer[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "characters" ADD "description" text[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "characters" ADD "gender" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "characters" ADD "race_id" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "characters" ADD "security_status" decimal[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "characters" ADD "title" text[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213002226"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexCharacterTable (20200213003141)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_characters_on_character_id_and_name" ON "characters"  ("character_id", "name")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213003141"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnNameAncestryCharacterTable (20200213011802)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "characters" RENAME COLUMN "ancestry" TO "ancestry_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213011802"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnNameBloodlineCharacterTable (20200213012632)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "characters" RENAME COLUMN "bloodline" TO "bloodline_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213012632"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveBogusIndexOnCharacterTable (20200213013942)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_characters_on_character_id"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213013942"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCorporations (20200213025132)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "corporations" ("id" bigserial primary key, "corporation_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213025132"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsCorporationTable (20200213030040)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "alliance_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "ceo_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "corporations" ADD "creator_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "date_founded" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "description" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "corporations" ADD "home_station_id" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "corporations" ADD "member_count" integer[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "corporations" ADD "shares" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "ticker" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "war_eligible" boolean[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213030040"]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnType (20200213032626)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "corporations" DROP COLUMN "shares"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "corporations" ADD "shares" bigint[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213032626"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexCorporationTable (20200213033732)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_corporations_on_corporation_id_and_name" ON "corporations"  ("corporation_id", "name")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200213033732"]]
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToFlagTable (20200214070354)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_flags_on_flag_id" ON "flags"  ("flag_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214070354"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToIndexTable (20200214072112)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_items_on_item_type_id" ON "items"  ("item_type_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214072112"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToRegionTable (20200214080241)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_regions_on_region_id" ON "regions"  ("region_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214080241"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToConstellatioTable (20200214080548)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_constellations_on_region_id_and_constellation_id" ON "constellations"  ("region_id", "constellation_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214080548"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToSolarSystemTable (20200214080727)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_solarsystems_on_solar_system_id" ON "solarsystems"  ("solar_system_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214080727"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAlliances (20200216053623)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "alliances" ("id" bigserial primary key, "alliance_id" integer, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216053623"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexAllianceTable (20200216053646)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_alliances_on_name_and_alliance_id" ON "alliances"  ("name", "alliance_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216053646"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnsAllianceTable (20200216072940)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "alliances" DROP COLUMN "description"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "alliances" ADD "date_founded" timestamp[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "alliances" ADD "creator_corporation_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "alliances" ADD "creator_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "alliances" ADD "executor_corporation_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "alliances" ADD "ticker" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216072940"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDgmAttributeTypes (20200216075623)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "dgm_attribute_types" ("id" bigserial primary key, "attribute_id" integer, "attribute_name" text, "description" text, "icon_id" integer, "default_value" decimal, "published" integer, "display_name" text, "unit_id" integer, "stackable" integer, "high_is_good" integer, "category_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216075623"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexDgmAttributeTypeTable (20200216075914)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dgm_attribute_types_on_attribute_id" ON "dgm_attribute_types"  ("attribute_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216075914"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDgmTypeAttributes (20200216085010)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "dgm_type_attributes" ("id" bigserial primary key, "item_type_id" integer, "attribute_id" integer, "value_int" integer, "value_float" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216085010"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexDgmTypeAttributeTable (20200216085110)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dgm_type_attributes_on_item_type_id_and_attribute_id" ON "dgm_type_attributes"  ("item_type_id", "attribute_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200216085110"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeColumnTypesDgmTables (20200218032614)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "dgm_attribute_types" DROP COLUMN "default_value"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "dgm_attribute_types" ADD "default_value" float[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "dgm_type_attributes" DROP COLUMN "value_float"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "dgm_type_attributes" ADD "value_float" float[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200218032614"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-01 09:33:08.578241"], ["updated_at", "2020-03-01 09:33:08.578241"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3139175137443385110)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-03-01 09:33:17 +0000
+Cannot render console from 192.168.240.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-03-01 08:33:18.115195"]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-29 09:33:18.119901"]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-23 09:33:18.122983"]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-01 09:33:18.125983"]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mKillmail Load (10.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" ORDER BY "killmails"."killmail_time" DESC[0m
+  ↳ app/views/home/index.html.erb:15
+  Rendered home/index.html.erb within layouts/application (Duration: 33.2ms | Allocations: 1912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 410ms (Views: 182.2ms | ActiveRecord: 14.5ms | Allocations: 19296)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-01 09:33:31 +0000
+Cannot render console from 192.168.240.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-03-01 08:33:31.168265"]]
+  ↳ app/controllers/home_controller.rb:5:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-29 09:33:31.170783"]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-23 09:33:31.172559"]]
+  ↳ app/controllers/home_controller.rb:7:in `index'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "killmails" WHERE "killmails"."killmail_time" >= $1[0m  [["killmail_time", "2020-02-01 09:33:31.174647"]]
+  ↳ app/controllers/home_controller.rb:8:in `index'
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mKillmail Load (0.3ms)[0m  [1m[34mSELECT "killmails".* FROM "killmails" ORDER BY "killmails"."killmail_time" DESC[0m
+  ↳ app/views/home/index.html.erb:15
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 644)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 23.4ms | ActiveRecord: 2.3ms | Allocations: 9430)
+
+
