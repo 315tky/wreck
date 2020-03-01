@@ -1,0 +1,7 @@
+dev/.env
+stage/.env
+dev/Old*
+stage/app/rails/*
+dev/app/rails/tmp/cache/*
+dev/app/rails/tmp/development_secret.txt
+dev/app/rails/node_modules/*
