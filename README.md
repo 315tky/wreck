@@ -25,10 +25,10 @@ Develop code and commit to github as per normal
 - 6.3 check site in local browser with http://localhost:8181
 
 7. push to prod # TO BE COMPLETED
-# ( need to sort out SSL certs, and relevant config for prod )
+( need to sort out SSL certs, and relevant config for prod )
 
 More info :
 ==========
 Wreck consists of 5 docker containers 
 wreck_app, wreck_tasks, wreck_nginx_proxy, wreck_pg_db, wreck_mysql_db
-#TBC - need some notes on making EVE ESI tokens etc.. 
+TBC - need some notes on making EVE ESI tokens etc.. 
