@@ -1,0 +1,35 @@
+# Move this file to .env and add values, make sure .env is in .gitigore
+# EVE api auth related
+BASE64_ENCODE=
+REFRESH_TOKEN=
+
+# docker pokill app container build args :
+USER_ID=1001
+GROUP_ID=1001
+USERNAME=nath_dev
+USERGROUP=nath_dev
+HOMEDIR=/home/nath_dev
+
+# used by pokill app container to connect to postgres db
+POKILL_DEV_USERNAME=pokill
+POKILL_DEV_PASSWORD=
+POKILL_DEV_DBNAME=pokill_dev
+POKILL_DEV_HOST=pg_db
+
+# used by pokill app container to connect to mysql db
+EVE_DEV_USERNAME=eve_dev
+EVE_DEV_PASSWORD=
+EVE_DEV_DBNAME=eve_dev
+EVE_DEV_HOST=mysql_db
+
+# used by pg container to create db at initialize time, and when connecting
+POSTGRES_USER=pokill
+POSTGRES_PASSWORD=
+POSTGRES_DB=pokill_dev
+
+# used by mysql container to create db at initialize time, and when connecting
+MYSQL_DATABASE=eve_dev
+MYSQL_ROOT_PASSWORD=than
+MYSQL_USER=eve_dev
+MYSQL_PASSWORD=
+
