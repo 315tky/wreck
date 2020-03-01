@@ -9,12 +9,15 @@ gem 'swagger_client', :git => 'https://github.com/315tky/eve-esi-api-swagger-gem
 gem 'mysql2'
 gem 'activerecord-import'
 
+# added to bumb nokogiri due to vuln on lower version
+gem "nokogiri", ">= 1.10.8" 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '>= 4.3.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
