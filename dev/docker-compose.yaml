@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   wreck_app_dev:
-    image: wreck_app:dev
+    image: wreck_dev:app_latest
     container_name: wreck_app_dev
     build:
       context: ./app
@@ -41,9 +41,9 @@ services:
       - wreck_pg_db_dev
       - wreck_mysql_db_dev
 
-  wreck_cron_dev:
-    image: wreck_cron:dev
-    container_name: wreck_cron_dev
+  wreck_tasks_dev:
+    image: wreck_dev:tasks_latest
+    container_name: wreck_tasks_dev
     build:
       context: ./tasks
       dockerfile: Dockerfile.tasks
@@ -61,7 +61,7 @@ services:
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
 
   wreck_nginx_proxy_dev:
-    image: wreck_nginx:dev 
+    image: wreck_dev:nginx_proxy_latest 
     container_name: wreck_nginx_proxy_dev
     build:
       context: ./proxy
@@ -78,7 +78,7 @@ services:
       - wreck_tmp_data:/wreck/tmp/sockets
 
   wreck_pg_db_dev:
-    image: wreck_postgres:dev
+    image: wreck_dev:postgres_latest
     container_name: wreck_postgres_dev
     build:
       context: ./databases
@@ -97,7 +97,7 @@ services:
       - wreck_pg_data:/var/lib/postgresql/data
 
   wreck_mysql_db_dev:
-    image: wreck_mysql:dev
+    image: wreck_dev:mysql_latest
     container_name: wreck_mysql_dev
     build:
       context: ./databases
