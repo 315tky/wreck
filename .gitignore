@@ -5,3 +5,4 @@ stage/app/rails/*
 dev/app/rails/tmp/cache/*
 dev/app/rails/tmp/development_secret.txt
 dev/app/rails/node_modules/*
+workshop/*
