@@ -62,22 +62,25 @@ services:
       - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
 
-  wreck_nginx_proxy:
-    image: 315tky/wreck:nginx_proxy_latest
-    container_name: wreck_nginx_proxy
-    #build:
+## 
+# comment out nginx proxy for Prod, because we will use instance already running on the AWS VM to be used
+###
+#  wreck_nginx_proxy:
+#    image: 315tky/wreck:nginx_proxy_latest
+#    container_name: wreck_nginx_proxy
+#    #build:
     #  context: ./proxy
     #  dockerfile: Dockerfile.nginx
-    ports:
-      - "8181:8181"
-    deploy:
-      resources:
-        limits:
-          memory: 128m
-    depends_on:
-      - wreck_app
-    volumes:
-      - wreck_tmp_data:/wreck/tmp/sockets
+    #    ports:
+    #  - "8181:8181"
+    #    deploy:
+    #      resources:
+    #    limits:
+    #      memory: 128m
+    #depends_on:
+    #  - wreck_app
+    #volumes:
+    #  - wreck_tmp_data:/wreck/tmp/sockets
 
   wreck_pg_db:
     image: 315tky/wreck:postgres_latest
