@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   wreck_app:
-    image: wreck_app:prod
+    image: wreck_stage:app_latest
     container_name: wreck_app
     build:
       context: ./app
@@ -43,7 +43,7 @@ services:
       - wreck_mysql_db
 
   wreck_tasks:
-    image: wreck_tasks:prod
+    image: wreck_stage:tasks_latest
     container_name: wreck_tasks
     build:
       context: ./tasks
@@ -63,7 +63,7 @@ services:
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
 
   wreck_nginx_proxy:
-    image: wreck_nginx_proxy:prod
+    image: wreck_stage:nginx_proxy_latest
     container_name: wreck_nginx_proxy
     build:
       context: ./proxy
@@ -80,7 +80,7 @@ services:
       - wreck_tmp_data:/wreck/tmp/sockets
 
   wreck_pg_db:
-    image: wreck_postgres:prod
+    image: wreck_stage:postgres_latest
     container_name: wreck_postgres
     build:
       context: ./databases
@@ -99,7 +99,7 @@ services:
       - wreck_pg_data:/var/lib/postgresql/data
 
   wreck_mysql_db:
-    image: wreck_mysql:prod
+    image: wreck_stage:mysql_latest
     container_name: wreck_mysql
     build:
       context: ./databases
