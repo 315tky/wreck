@@ -4,15 +4,6 @@ services:
   wreck_app:
     image: 315tky/wreck:app_latest
     container_name: wreck_app
-    # build:
-    #  context: ./app
-    #  dockerfile: Dockerfile.rails
-    #  args:
-    #    - USER_ID
-    #    - GROUP_ID
-    #    - USERNAME
-    #    - USERGROUP
-    #    - HOMEDIR
     deploy:
       resources:
         limits:
@@ -37,7 +28,7 @@ services:
     command: bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
     volumes:
       - ./tasks/eve_mysql_data_import:/rails/lib/eve_mysql_data_import
-      - wreck_tmp_data:/wreck/tmp/sockets
+      - /wreck/tmp/sockets:/wreck/tmp/sockets
     depends_on:
       - wreck_pg_db
       - wreck_mysql_db
@@ -45,9 +36,6 @@ services:
   wreck_tasks:
     image: 315tky/wreck:tasks_latest
     container_name: wreck_tasks
-    #build:
-    #  context: ./tasks
-    #  dockerfile: Dockerfile.tasks
     deploy:
       resources:
         limits: 
@@ -61,33 +49,9 @@ services:
       - ./tasks/cron_tasks/1min:/etc/periodic/1min/:ro
       - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
-
-## 
-# comment out nginx proxy for Prod, because we will use instance already running on the AWS VM to be used
-###
-#  wreck_nginx_proxy:
-#    image: 315tky/wreck:nginx_proxy_latest
-#    container_name: wreck_nginx_proxy
-#    #build:
-    #  context: ./proxy
-    #  dockerfile: Dockerfile.nginx
-    #    ports:
-    #  - "8181:8181"
-    #    deploy:
-    #      resources:
-    #    limits:
-    #      memory: 128m
-    #depends_on:
-    #  - wreck_app
-    #volumes:
-    #  - wreck_tmp_data:/wreck/tmp/sockets
-
   wreck_pg_db:
     image: 315tky/wreck:postgres_latest
     container_name: wreck_postgres
-    #build:
-    #  context: ./databases
-    #  dockerfile: Dockerfile.pg
     ports:
       - 5432
     deploy:
@@ -104,9 +68,6 @@ services:
   wreck_mysql_db:
     image: 315tky/wreck:mysql_latest
     container_name: wreck_mysql
-    #build:
-    #  context: ./databases
-    #  dockerfile: Dockerfile.mysql
     deploy:
       resources:
         limits:
