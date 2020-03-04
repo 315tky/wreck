@@ -1,22 +1,142 @@
-<h1>PO Killz</h1>
-<p>Summary of PO kills</p>
 
-<p> Kills in the last hour : <%= @killmails_last_hour %> </p>
-<p> Kills in the last day : <%= @killmails_last_day %></p>
-<p> Kills in the last week : <%= @killmails_last_week %></p>
-<p> Kills in the last month : <%= @killmails_last_month %></p>
-
-<table>
-    <tr>
-      <th>Killmail Id</th>
-      <th>Victim Id</th>
-      <th>Time of Kill</th>
-    </tr>
-  <% @killmails.each do |killmail| %>
-    <tr>
-      <td><%= killmail.killmail_id %></td>
-      <td><%= killmail.victim_id %></td>
-      <td><%= killmail.killmail_time %></td>
-    </tr>
-<% end %>
-</table>
+<div class=columns>
+  <div class="column is-narrow">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th style="text-align:center" colspan="3">Corporation Kills/Losses</th>
+        </tr>
+        <tr>
+          <th class="is-info">Last</th>
+          <th class="is-primary">Kills</th>
+          <th class="is-danger">Losses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+           <td>Hour</td>
+           <td><%= @killmails_last_hour %></td>
+           <td>tbc</td>
+        </tr>
+        <tr>
+          <td>24hrs</td>
+          <td><%= @killmails_last_day %></td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>Week</td>
+          <td><%= @killmails_last_week %></td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>Month</td>
+          <td><%= @killmails_last_week %></td>
+          <td>tbc</td>
+        <tr>
+        <tr>
+           <td>Aeon</td>
+           <td><%= @killmails.all.count %></td>
+           <td>tbc</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column is-narrow">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th style="text-align:center" colspan="4">
+            The Top 5 Killers
+          </th>
+        </tr>
+        <tr>
+          <th class="is-warning">Rank</th>
+          <th class="is-info">Toon</th>
+          <th class="is-primary">Kills</th>
+          <th class="is-danger">Losses</th>
+        <tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+          <td>tbc</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <div class="column is-narrow">
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th style="text-align:center" colspan="4">
+              The Top 5 Slackers
+            </th>
+          </tr>
+          <tr>
+            <th class="is-warning">Rank</th>
+            <th class="is-info">Toon</th>
+            <th class="is-primary">Kills</th>
+            <th class="is-danger">Losses</th>
+          <tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+          </tr>
+          <tr>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+          </tr>
+          <tr>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+          </tr>
+          <tr>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+          </tr>
+          <tr>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+            <td>tbc</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
