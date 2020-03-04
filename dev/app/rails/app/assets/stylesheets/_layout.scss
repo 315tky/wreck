@@ -2,7 +2,7 @@ body {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  height:100vh;
+  min-height:-webkit-fill-available;
   background-color:$black;
 }
 .header {
