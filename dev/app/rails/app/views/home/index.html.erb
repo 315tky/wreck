@@ -15,28 +15,28 @@
       <tbody>
         <tr>
            <td>Hour</td>
-           <td><%= @killmails_last_hour %></td>
-           <td>tbc</td>
+           <td><%= @kills_last_hour %></td>
+           <td><%= @losses_last_hour %></td>
         </tr>
         <tr>
           <td>24hrs</td>
-          <td><%= @killmails_last_day %></td>
-          <td>tbc</td>
+          <td><%= @kills_last_day %></td>
+          <td><%= @losses_last_hour %></td>
         </tr>
         <tr>
           <td>Week</td>
-          <td><%= @killmails_last_week %></td>
-          <td>tbc</td>
+          <td><%= @kills_last_week %></td>
+          <td><%= @losses_last_week %></td>
         </tr>
         <tr>
           <td>Month</td>
-          <td><%= @killmails_last_week %></td>
-          <td>tbc</td>
+          <td><%= @kills_last_month %></td>
+          <td><%= @losses_last_month %></td>
         <tr>
         <tr>
            <td>Aeon</td>
-           <td><%= @killmails.all.count %></td>
-           <td>tbc</td>
+           <td><%= @kills_aeon%></td>
+           <td><%= @losses_aeon %></td>
         </tr>
       </tbody>
     </table>
@@ -46,47 +46,25 @@
       <thead>
         <tr>
           <th style="text-align:center" colspan="4">
-            The Top 5 Killers
+            All-time Top 10 Killers
           </th>
         </tr>
         <tr>
-          <th class="is-warning">Rank</th>
+          <th class="is-info">#</th>
           <th class="is-info">Toon</th>
           <th class="is-primary">Kills</th>
-          <th class="is-danger">Losses</th>
         <tr>
       </thead>
       <tbody>
+        <% count = 1 %>
+        <% @top_ten_all_time.each do |name,tally| %>
         <tr>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
+          <td><%= count %></td>
+          <td><%= name %></td>
+          <td><%= tally %></td>
         </tr>
-        <tr>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-        </tr>
-        <tr>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-        </tr>
-        <tr>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-        </tr>
-        <tr>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-          <td>tbc</td>
-        </tr>
+        <% count += 1 %>
+        <% end %>
       </tbody>
     </table>
   </div>
@@ -95,48 +73,53 @@
         <thead>
           <tr>
             <th style="text-align:center" colspan="4">
-              The Top 5 Slackers
+              Top 10 Killers This Month
             </th>
           </tr>
           <tr>
-            <th class="is-warning">Rank</th>
+            <th class="is-info">#</th>
             <th class="is-info">Toon</th>
             <th class="is-primary">Kills</th>
-            <th class="is-danger">Losses</th>
           <tr>
         </thead>
         <tbody>
+          <% count = 1 %>
+          <% @top_ten_month.each do |name,tally| %>
           <tr>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
+            <td><%= count %></td>
+            <td><%= name %></td>
+            <td><%= tally %></td>
           </tr>
-          <tr>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-          </tr>
-          <tr>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-          </tr>
-          <tr>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-          </tr>
-          <tr>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-            <td>tbc</td>
-          </tr>
+          <% count += 1 %>
+          <% end %>
         </tbody>
       </table>
+  </div>
+  <div class="column is-narrow">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th style="text-align:center" colspan="4">
+            Top 10 Killers This Week
+          </th>
+        </tr>
+        <tr>
+          <th class="is-info">#</th>
+          <th class="is-info">Toon</th>
+          <th class="is-primary">Kills</th>
+        <tr>
+      </thead>
+      <tbody>
+        <% count = 1 %>
+        <% @top_ten_week.each do |name,tally| %>
+        <tr>
+          <td><%= count %></td>
+          <td><%= name %></td>
+          <td><%= tally %></td>
+        </tr>
+        <% count += 1 %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
