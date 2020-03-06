@@ -58,12 +58,21 @@
       <tbody>
         <% count = 1 %>
         <% @top_ten_all_time.each do |name,tally| %>
-        <tr>
-          <td><%= count %></td>
-          <td><%= name %></td>
-          <td><%= tally %></td>
-        </tr>
-        <% count += 1 %>
+          <% if count == 1 %>
+            <tr>
+              <td><%= count %><span class="icon has-text-warning"><i class="fas fa-medal"></i></span></td>
+              <td><%= name %></td>
+              <td><%= tally %></td>
+            </tr>
+            <% count += 1 %>
+          <% else %>
+            <tr>
+              <td><%= count %></td>
+              <td><%= name %></td>
+              <td><%= tally %></td>
+            </tr>
+            <% count += 1 %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
@@ -85,13 +94,22 @@
         <tbody>
           <% count = 1 %>
           <% @top_ten_month.each do |name,tally| %>
-          <tr>
-            <td><%= count %></td>
-            <td><%= name %></td>
-            <td><%= tally %></td>
-          </tr>
-          <% count += 1 %>
+          <% if count == 1 %>
+            <tr>
+	      <td><%= count %><span class="icon has-text-warning"><i class="fas fa-medal"></i></span></td>
+	      <td><%= name %></td>
+	      <td><span><%= tally %></span></td>
+            </tr>
+            <% count += 1 %>
+          <% else %>
+            <tr>
+              <td><%= count %></td>
+              <td><%= name %></td>
+              <td><%= tally %></td>
+            </tr>
+            <% count += 1 %>
           <% end %>
+        <% end %>
         </tbody>
       </table>
   </div>
@@ -112,12 +130,21 @@
       <tbody>
         <% count = 1 %>
         <% @top_ten_week.each do |name,tally| %>
-        <tr>
-          <td><%= count %></td>
-          <td><%= name %></td>
-          <td><%= tally %></td>
-        </tr>
-        <% count += 1 %>
+          <% if count == 1 %>
+            <tr>
+              <td><%= count %><span class="icon has-text-warning"><i class="fas fa-medal"></i></span></td>
+              <td><%= name %></td>
+              <td><span><%= tally %></span></td>
+            </tr>
+            <% count += 1 %>
+          <% else %>
+            <tr>
+              <td><%= count %></td>
+              <td><%= name %></td>
+              <td><%= tally %></td>
+            </tr>
+            <% count += 1 %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
