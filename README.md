@@ -1,6 +1,6 @@
 **WRECK - Webtool Reporting Eve-online Corporation Killmails**
 
-example site : http://pokill.saigos.space
+example site : https://pokill.saigos.space
 
 
 * Any use of this software should comply with CCP License Agreement detailed here :
