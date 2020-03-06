@@ -64,23 +64,22 @@ Note : Dev and Stage configs differ a little, for example,
 
 ```./prepare_for_prod.sh```
 
-     Note, rails app public assets are precompiled locally,
-     and need to be copied over to the Prod VM filesystem, where Nginx can see them.
+Note, rails app public assets are precompiled locally,
+and need to be copied over to the Prod VM filesystem, where Nginx can see them.
 
-     Docker images are pushed from stage to Docker Hub, and can then be pulled,
-     down from the Prod host from DockerHub. 
+Docker images are pushed from stage to Docker Hub, and can then be pulled,
+down from the Prod host from DockerHub. 
 
-     Initially public assets, tasks dir, and docker-compose.yaml etc, need to be copied over to prod host.  
+Initially public assets, tasks dir, and docker-compose.yaml etc, need to be copied over to prod host.  
 
-   Configure nginx proxy on prod host correctly to relfect your site URL etc..
-   ( Also see this nice reference if wanting to get nginx proxy differently in prod :
-     https://medium.com/faun/three-methods-to-share-rails-assets-with-nginx-f39c90bb7d68 )
+Configure nginx proxy on prod host correctly to relfect your site URL etc..
+( Also see this nice reference if wanting to get nginx proxy differently in prod :
+  https://medium.com/faun/three-methods-to-share-rails-assets-with-nginx-f39c90bb7d68 )
 
-   From the same dir as the docker-compose.yaml, on the prod host, run
+From the same dir as the docker-compose.yaml, on the prod host, run
     
-   ```docker-compose --compatibility up -d```
+```docker-compose --compatibility up -d```
 
-  
 <h4>More info</h4>
 
 TBC - need some notes on making EVE ESI tokens etc.. 
