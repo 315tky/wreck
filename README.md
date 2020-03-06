@@ -18,8 +18,8 @@ Wreck is esstentially a dockerized rails web application and consists of 5 docke
  - wreck_pg_db
  - wreck_mysql_db
 
-Prod you may or may not wish to use nginx_proxy in a container, beware of 
-making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
+For Prod you may or may not wish to use nginx_proxy in a container, beware of 
+the need for making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
 
 ```git clone https://github.com/315tky/wreck.git```
 
@@ -29,7 +29,7 @@ making the rails precompiled assets visible for nginx_proxy in Prod, see note be
 
 ```cp stage/env stage/.env```
 
-edit .env files adding relevant values.
+edit thw .env files adding relevant values.
 
 <h4>To run wreck in dev</h4> 
 
