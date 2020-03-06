@@ -22,9 +22,9 @@ Prod you may or may not wish to use nginx_proxy in a container, beware of
 making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
 
 ```git clone https://github.com/315tky/wreck.git```
-```cd wreck
-   cp dev/env dev/.env
-   cp stage/env stage/.env```
+```cd wreck```
+```cp dev/env dev/.env```
+```cp stage/env stage/.env```
 
 edit .env files adding relevant values.
 
