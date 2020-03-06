@@ -35,8 +35,8 @@ services:
       - HOMEDIR
     command: bash -c "yarn install --check-files && rails db:migrate && bundle exec puma -C config/puma.rb"
     volumes:
-      - ./app/rails:/wreck
-      - wreck_tmp_data:/wreck/tmp/sockets
+      - ./app/rails:/app/wreck
+      - wreck_tmp_data:/app/wreck/tmp/sockets
     depends_on:
       - wreck_pg_db_dev
       - wreck_mysql_db_dev
@@ -53,11 +53,11 @@ services:
           memory: 128m
     depends_on:
       - wreck_app_dev
-    command: crond -f -l 8 -L /var/log/wreck/cron.log
+    command: crond -f -l 8 -L /app/wreck/log/cron.log
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/log/wreck:/var/log/wreck
-      - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
+      - /app/wreck/log:/app/wreck/log
+      - ./tasks/cron_tasks/hourly:/etc/periodic/hourly/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
 
   wreck_nginx_proxy_dev:
@@ -75,7 +75,9 @@ services:
     depends_on:
       - wreck_app_dev
     volumes:
-      - wreck_tmp_data:/wreck/tmp/sockets
+      - wreck_tmp_data:/app/wreck/tmp/sockets
+      - /var/log/nginx:/var/log/nginx
+      - /app/wreck/public/assets:/app/wreck/public/assets
 
   wreck_pg_db_dev:
     image: wreck_dev:postgres_latest

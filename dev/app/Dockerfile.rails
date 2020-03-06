@@ -21,8 +21,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # set working dir
-WORKDIR /wreck
-RUN chown -R $USERNAME:$USERGROUP /wreck
+WORKDIR /app/wreck
+RUN chown -R $USERNAME:$USERGROUP /app/wreck
 
 # install bundler and gem files using bundler
 COPY rails/Gemfile* ./
