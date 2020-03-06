@@ -27,8 +27,8 @@ services:
       - RAILS_ENV
     command: bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
     volumes:
-      - ./tasks/eve_mysql_data_import:/rails/lib/eve_mysql_data_import
-      - /wreck/tmp/sockets:/wreck/tmp/sockets
+      - ./tasks/eve_mysql_data_import:/app/wreck/lib/eve_mysql_data_import
+      - /app/wreck/tmp/sockets:/app/wreck/tmp/sockets
     depends_on:
       - wreck_pg_db
       - wreck_mysql_db
@@ -42,12 +42,11 @@ services:
           memory: 128m
     depends_on:
       - wreck_app 
-    command: crond -f -l 8 -L /var/log/wreck/cron.log
+    command: crond -f -l 8 -L /app/wreck/log/cron.log
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/log/wreck:/var/log/wreck
-      - ./tasks/cron_tasks/1min:/etc/periodic/1min/:ro
-      - ./tasks/cron_tasks/15min:/etc/periodic/15min/:ro
+      - /app/wreck/log:/app/wreck/log
+      - ./tasks/cron_tasks/1min:/etc/periodic/hourly/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
   wreck_pg_db:
     image: 315tky/wreck:postgres_latest
