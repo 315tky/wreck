@@ -21,16 +21,16 @@ wreck_mysql_db
 Prod you may or may not wish to use nginx_proxy in a container, beware of 
 making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
 
-```git clone https://github.com/315tky/wreck.git``
+```git clone https://github.com/315tky/wreck.git```
 ```cd wreck
    cp dev/env dev/.env
    cp stage/env stage/.env```
 
 edit .env files adding relevant values.
 
-<h4>To run wreck in dev</h4>` : 
+<h4>To run wreck in dev</h4> : 
 
-```cd dev``
+```cd dev```
 ```docker-compose --compatibility up```
 Note, docker-compose command will build images on its first run
 
