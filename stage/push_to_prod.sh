@@ -12,3 +12,9 @@ docker push 315tky/wreck:tasks_latest
 docker push 315tky/wreck:nginx_proxy_latest
 docker push 315tky/wreck:postgres_latest
 docker push 315tky/wreck:mysql_latest
+
+echo "copy the precompiled assets to /app/wreck/public/assets on Prod host"
+echo "From Prod host, docker pull the 315/wreck images"
+echo "Copy the Wreck Prod dir over to Prod host"
+echo "cd wreck/ && docker-compose --compatibility up"
+

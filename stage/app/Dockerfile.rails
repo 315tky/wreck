@@ -21,19 +21,16 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # set working dir
-WORKDIR /wreck
-RUN chown -R $USERNAME:$USERGROUP /wreck
+WORKDIR /wreck/app
+RUN chown -R $USERNAME:$USERGROUP /wreck/app
 
 # get rails code
-COPY rails/ /wreck
+COPY rails/ /app/wreck
 RUN yarn add bulma
 
 # install bundler and gem files using bundler
 RUN gem install bundler:2.1.4
 RUN bundle config --local without "development test" && bundle install
-#ENV RAILS_ENV production
-#RUN echo wq! | EDITOR="vi" rails credentials:edit
-#RUN RAILS_ENV=production rails assets:precompile
 
 #USER $USER_ID
 # Can maybe lose all the user and group stuff, especially in Prod.. need to test it without - nmd - 27th Feb 2020
