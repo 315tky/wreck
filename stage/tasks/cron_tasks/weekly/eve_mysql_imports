@@ -1,8 +1,8 @@
 #!/bin/sh
-## This file,  cron_tasks/weekly/eve_mysql_imports, is mounted on the cron docker container 
-LOG="/var/log/wreck/cron.log"
+## This file, cron_tasks/weekly/eve_mysql_imports, is mounted on the cron docker container 
+LOG="/app/wreck/log/cron.log"
 CONTAINER="wreck_app"
-echo "`date -Iseconds`: running weekly rake task eve_import:all_eve_mysql on wreck_app containeri, sleeping for 300s to avoid clash with other jobs" >> $LOG 2>&1 
+echo "`date -Iseconds`: running weekly rake task eve_import:all_eve_mysql on $CONTAINER container, sleeping for 300s to avoid clash with other jobs" >> $LOG 2>&1 
 sleep 300 # stagger so we dont run at the same time as a 15min cronjob etc.. 
 docker exec $CONTAINER bin/rake eve_import:all_eve_mysql >> $LOG 2>&1
-echo "`date -Iseconds`: completed rake task eve_import:all_eve_mysql on wreck_app container" >> $LOG 2>&1
+echo "`date -Iseconds`: completed rake task eve_import:all_eve_mysql on $CONTAINER container" >> $LOG 2>&1
