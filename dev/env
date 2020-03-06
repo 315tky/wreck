@@ -1,35 +1,42 @@
-# Move this file to .env and add values, make sure .env is in .gitigore
+###
+# Environment variable template, cp to .env and add relevant values.
+# !!! Do NOT check the .env file to git, make sure .env is in .gitignore file.
+##
+RAILS_ENV=development
+
+# EVE-online Corp ID
+HOME_CORP_ID=
 # EVE api auth related
 BASE64_ENCODE=
 REFRESH_TOKEN=
 
-# docker pokill app container build args :
-USER_ID=1001
-GROUP_ID=1001
-USERNAME=nath_dev
-USERGROUP=nath_dev
-HOMEDIR=/home/nath_dev
+# rails app docker container build args :
+USER_ID=
+GROUP_ID=
+USERNAME=
+USERGROUP=
+HOMEDIR=
 
-# used by pokill app container to connect to postgres db
-POKILL_DEV_USERNAME=pokill
+# used by rails app docker container to connect to postgres db docker container
+POKILL_DEV_USERNAME=
 POKILL_DEV_PASSWORD=
-POKILL_DEV_DBNAME=pokill_dev
-POKILL_DEV_HOST=pg_db
+POKILL_DEV_DBNAME=
+POKILL_DEV_HOST=
 
-# used by pokill app container to connect to mysql db
-EVE_DEV_USERNAME=eve_dev
+# used by rails app docker  container to connect to mysql db
+EVE_DEV_USERNAME=
 EVE_DEV_PASSWORD=
-EVE_DEV_DBNAME=eve_dev
-EVE_DEV_HOST=mysql_db
+EVE_DEV_DBNAME=
+EVE_DEV_HOST=
 
-# used by pg container to create db at initialize time, and when connecting
-POSTGRES_USER=pokill
+# used by pg docker container to create db at initialize time, and when connecting
+POSTGRES_USER=
 POSTGRES_PASSWORD=
-POSTGRES_DB=pokill_dev
+POSTGRES_DB=
 
-# used by mysql container to create db at initialize time, and when connecting
-MYSQL_DATABASE=eve_dev
-MYSQL_ROOT_PASSWORD=than
-MYSQL_USER=eve_dev
+# used by mysql docker container to create db at initialize time, and when connecting
+MYSQL_DATABASE=
+MYSQL_ROOT_PASSWORD=
+MYSQL_USER=
 MYSQL_PASSWORD=
 
