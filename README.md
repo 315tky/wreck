@@ -10,7 +10,7 @@ https://developers.eveonline.com/resource/license-agreement
 Instructions for use
 ============================================================
 
-Wreck consists of 4 docker containers`, each in dev and stage :
+Wreck is esstentially a dockerized rails web application and consists of 5 docker containers, each in dev and stage :
 
 wreck_app 
 wreck_tasks
