@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:2.7.0
 
 # set up user and group etc..
 ARG USER_ID
@@ -26,14 +26,14 @@ RUN chown -R $USERNAME:$USERGROUP /wreck
 
 # get rails code
 COPY rails/ /wreck
+RUN yarn add bulma
 
 # install bundler and gem files using bundler
 RUN gem install bundler:2.1.4
-RUN bundle install --without development test
-
-ENV RAILS_ENV production
-RUN echo wq! | EDITOR="vi" rails credentials:edit
-RUN rails assets:precompile
+RUN bundle config --local without "development test" && bundle install
+#ENV RAILS_ENV production
+#RUN echo wq! | EDITOR="vi" rails credentials:edit
+#RUN RAILS_ENV=production rails assets:precompile
 
 #USER $USER_ID
 # Can maybe lose all the user and group stuff, especially in Prod.. need to test it without - nmd - 27th Feb 2020
