@@ -29,7 +29,7 @@ the need for making the rails precompiled assets visible for nginx_proxy in Prod
 
 ```cp stage/env stage/.env```
 
-edit thw .env files adding relevant values.
+edit the .env files adding relevant values.
 
 <h4>To run wreck in dev</h4> 
 
@@ -82,4 +82,5 @@ From the same dir as the docker-compose.yaml, on the prod host, run
 
 <h4>More info</h4>
 
+TBC - detail the import of EVE SDE to mysql DB
 TBC - need some notes on making EVE ESI tokens etc.. 
