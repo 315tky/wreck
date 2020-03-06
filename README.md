@@ -81,6 +81,6 @@ Note : Dev and Stage configs differ a little, for example,
    ```docker-compose --compatibility up -d```
 
   
-More info :
-==========
+<h4>More info</h4>
+
 TBC - need some notes on making EVE ESI tokens etc.. 
