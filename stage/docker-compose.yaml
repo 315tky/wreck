@@ -78,6 +78,8 @@ services:
       - wreck_app
     volumes:
       - wreck_tmp_data:/wreck/tmp/sockets
+      - /var/log/nginx:/var/log/nginx
+      - /var/www/wreck/public/assets:/wreck/public/assets
 
   wreck_pg_db:
     image: wreck_stage:postgres_latest
