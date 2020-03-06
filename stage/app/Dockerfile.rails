@@ -21,8 +21,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # set working dir
-WORKDIR /wreck/app
-RUN chown -R $USERNAME:$USERGROUP /wreck/app
+WORKDIR /app/wreck
+RUN chown -R $USERNAME:$USERGROUP /app/wreck
 
 # get rails code
 COPY rails/ /app/wreck
