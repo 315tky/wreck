@@ -12,15 +12,11 @@ Instructions for use
 
 Wreck is esstentially a dockerized rails web application and consists of 5 docker containers, each in dev and stage :
 
-wreck_app 
-
-wreck_tasks
-
-wreck_nginx_proxy
-
-wreck_pg_db
-
-wreck_mysql_db
+ - wreck_app 
+ - wreck_tasks
+ - wreck_nginx_proxy
+ - wreck_pg_db
+ - wreck_mysql_db
 
 Prod you may or may not wish to use nginx_proxy in a container, beware of 
 making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
