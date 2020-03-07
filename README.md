@@ -25,19 +25,29 @@ the need for making the rails precompiled assets visible for nginx_proxy in Prod
 git clone https://github.com/315tky/wreck.git
 ```
 
-```cd wreck```
+```
+cd wreck
+```
 
-```cp dev/env dev/.env```
+```
+cp dev/env dev/.env
+```
 
-```cp stage/env stage/.env```
+```
+cp stage/env stage/.env
+```
 
 edit the .env files adding relevant values.
 
 <h4>To run wreck in dev</h4> 
 
-```cd dev```
+```
+cd dev
+```
 
-```docker-compose --compatibility up```
+```
+docker-compose --compatibility up
+```
 
 Note, docker-compose command will build images on its first run
 
@@ -50,11 +60,17 @@ This will populate the postgres database when it runs.
 
 <h4>To run wreck in stage</h4>
 
-```cd wreck/stage```
+```
+cd wreck/stage
+```
 
-```./prepare_for_stage.sh```
+```
+./prepare_for_stage.sh
+```
 
-```docker-compose --compatibility up```
+```
+docker-compose --compatibility up
+```
 
 check site in local browser with http://localhost:8181
 
@@ -64,7 +80,9 @@ Note : Dev and Stage configs differ a little, for example,
 
 <h4>To push to, and run in prod</h4>
 
-```./prepare_for_prod.sh```
+```
+./prepare_for_prod.sh
+```
 
 Note, rails app public assets are precompiled locally,
 and need to be copied over to the Prod VM filesystem, where Nginx can see them.
@@ -80,7 +98,9 @@ Configure nginx proxy on prod host correctly to relfect your site URL etc..
 
 From the same dir as the docker-compose.yaml, on the prod host, run
     
-```docker-compose --compatibility up -d```
+```
+docker-compose --compatibility up -d
+```
 
 <h4>More info</h4>
 
