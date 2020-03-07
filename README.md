@@ -10,7 +10,7 @@ https://developers.eveonline.com/resource/license-agreement
 Instructions for use
 ============================================================
 
-Wreck is esstentially a dockerized rails web application and consists of 5 docker containers, each in dev and stage :
+Wreck is essentially a dockerized rails web site and consists of 5 docker containers, each in dev and stage :
 
  - wreck_app 
  - wreck_tasks
@@ -21,7 +21,9 @@ Wreck is esstentially a dockerized rails web application and consists of 5 docke
 For Prod you may or may not wish to use nginx_proxy in a container, beware of 
 the need for making the rails precompiled assets visible for nginx_proxy in Prod, see note below for more on this.
 
-```git clone https://github.com/315tky/wreck.git```
+```
+git clone https://github.com/315tky/wreck.git
+```
 
 ```cd wreck```
 
