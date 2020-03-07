@@ -26,6 +26,7 @@ RUN chown -R $USERNAME:$USERGROUP /app/wreck
 
 # install bundler and gem files using bundler
 COPY rails/Gemfile* ./
+RUN gem install concurrent-ruby
 RUN gem install bundler:2.1.4 && bundle install
 
 #USER $USER_ID

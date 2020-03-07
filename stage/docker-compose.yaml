@@ -34,7 +34,7 @@ services:
       - USERGROUP
       - HOMEDIR
       - RAILS_ENV
-    command: bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
+    command: bash -c "RUBYOPT='-W:no-deprecated -W:no-experimental' rails db:migrate && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec puma -C config/puma.rb"
     volumes:
       - ./tasks/eve_mysql_data_import:/app/wreck/lib/eve_mysql_data_import
       - wreck_tmp_data:/app/wreck/tmp/sockets
