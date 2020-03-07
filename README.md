@@ -92,7 +92,7 @@ down from the Prod host from DockerHub.
 
 Initially public assets, tasks dir, and docker-compose.yaml etc, need to be copied over to prod host.  
 
-Configure nginx proxy on prod host correctly to relfect your site URL etc..
+Configure nginx proxy on prod host correctly to reflect your site URL etc..
 ( Also see this nice reference if wanting to get nginx proxy differently in prod :
   https://medium.com/faun/three-methods-to-share-rails-assets-with-nginx-f39c90bb7d68 )
 
@@ -102,7 +102,8 @@ From the same dir as the docker-compose.yaml, on the prod host, run
 docker-compose --compatibility up -d
 ```
 
-<h4>More info</h4>
+<h4>More info - TBC</h4>
 
 TBC - detail the import of EVE SDE to mysql DB
+
 TBC - need some notes on making EVE ESI tokens etc.. 
