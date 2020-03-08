@@ -5,7 +5,7 @@ ruby '2.7.0'
 
 # Manually added eve esi client swagger gem
 gem 'swagger_client', :git => 'https://github.com/315tky/eve-esi-api-swagger-gem.git'
-
+gem 'jwt'
 gem 'mysql2'
 gem 'activerecord-import'
 
