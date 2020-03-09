@@ -24,17 +24,33 @@
           </div>
           <div class="level-left">
              <div class="level-item">
-               <button id="login" class="button is-light is-outlined">Login</button>
+               <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
              </div>
           </div>
         </nav>
      </div>
    </header>
+   <% if notice %>
    <section class="section">
      <div class="container">
-       <%= yield %>
+       <div class="columns">
+         <div class="column"></div>
+         <div class="column">
+           <div class="notification has-background-warning is-size-5 has-text-black">
+             <%= notice %>
+           </div>
+         </div>
+         <div class="column"></div>
+      </div>
      </div>
    </section>
+   <% else %>
+     <section class="section">
+       <div class="container">
+         <%= yield %>
+       </div>
+     </section>
+   <% end %>
    <footer class="footer">
      <div class="container">
        <p class="level-item">

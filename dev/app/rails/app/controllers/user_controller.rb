@@ -1,9 +1,10 @@
 class UserController < ApplicationController
 
   def login
-    user = User.new(params[:code])
-  #  @access_token = user.get_auth_response
-     @access_token = user.eve_login
+    unless User.eve_login(params[:code])
+      flash[:notice] = 'EVE SSO Login attempt failed, or you do not have permission to view this site.'
+      redirect_to home_index_url
+    end
   end
 
   def logout
