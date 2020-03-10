@@ -17,14 +17,20 @@
           <div class="level-left">
             <div class="level-item">
               <span class="icon">
-	        <i class="fas fa-rocket"> </i>
+	              <i class="fas fa-rocket"> </i>
               </span>
             </div>
-	    <div class="level-item"> <span >Paranoia Overload Corporation</span> </div>
+	          <div class="level-item">
+              <span >Paranoia Overload Corporation</span>
+            </div>
           </div>
           <div class="level-left">
              <div class="level-item">
-               <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
+               <% if session[:current_user_id] %>
+               <%= link_to('Logout', user_logout_path, :class => "button is-light is-outlined") %>
+               <% else %>
+                 <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
+               <% end %>
              </div>
           </div>
         </nav>
