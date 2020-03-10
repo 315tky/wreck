@@ -4,7 +4,7 @@ body {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  min-height:-webkit-fill-available;
+//  min-height:-webkit-fill-available;
   background-color:$black;
 }
 .header {
@@ -12,6 +12,18 @@ body {
   background-color:$black-bis;
   color:orange;
   padding:1rem 1.5rem;
+}
+.hero-body {
+  padding-top:1rem;
+  padding-bottom:0rem;
+  .container {
+    padding-bottom: 10rem;
+  }
+}
+
+
+.footer {
+  background-color:$black-bis;
 }
 .section {
   display:flex;
