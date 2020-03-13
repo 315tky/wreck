@@ -18,7 +18,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:current_user_id])
+    user = User.find(session[:current_user_id])
+    # need a rake task that gets all corp members populates Character
+    # currently just relies on getting from Killmail
+    @character = Character.find_by(name: user.name)
   end
 
 end

@@ -2,6 +2,12 @@ class Character < ApplicationRecord
   require 'swagger_client'
 # 95090365 <- example character_id
 
+   def self.all_characters(corporation_id)
+     self.where(corporation_id: corporation_id).pluck(:character_id)
+   end   
+
+
+
    def self.character_import(characters_ids)
 
      for_import = []

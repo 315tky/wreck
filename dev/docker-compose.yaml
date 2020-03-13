@@ -48,6 +48,8 @@ services:
     build:
       context: ./tasks
       dockerfile: Dockerfile.tasks
+    ports: 
+      - "443:443"
     deploy:
       resources:
         limits: 
@@ -87,7 +89,7 @@ services:
       context: ./databases
       dockerfile: Dockerfile.pg
     ports:
-      - 5432
+      - "5432:5432"
     deploy:
       resources:
         limits:
@@ -105,10 +107,12 @@ services:
     build:
       context: ./databases
       dockerfile: Dockerfile.mysql
+    ports: 
+      - "3306:3306"
     deploy:
       resources:
         limits:
-          memory: 128m
+          memory: 512m
     environment:
       - MYSQL_DATABASE
       - MYSQL_ROOT_PASSWORD
@@ -116,6 +120,7 @@ services:
       - MYSQL_PASSWORD
     volumes:
       - wreck_mysql_data:/var/lib/mysql
+      - ./tasks/eve_mysql_data_import:/app/wreck/tasks/eve_mysql_data_import
 
 volumes:
   wreck_pg_data:

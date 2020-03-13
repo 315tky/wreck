@@ -8,6 +8,7 @@ gem 'swagger_client', :git => 'https://github.com/315tky/eve-esi-api-swagger-gem
 gem 'jwt'
 gem 'mysql2'
 gem 'activerecord-import'
+gem 'mini_magick'
 
 # added to bumb nokogiri due to vuln on lower version
 gem "nokogiri", ">= 1.10.8" 

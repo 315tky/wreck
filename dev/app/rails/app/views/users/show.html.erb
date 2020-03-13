@@ -1,6 +1,21 @@
-<html>
-
-
-  <p> this is user show </p>
-      
-</html>
+<div class="section">
+  <div class="container">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-256x256">
+            <%= image_tag('test.jpeg') %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>Name: <%= @character.name %></p>
+            <p>Title: <%= @character.title %></p>
+            <p>Born: <%= @character.birthday.strftime("%I:%M %p %d/%m/%Y") %></p>
+            <p>Security Status: <%= @character.security_status.round(2) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

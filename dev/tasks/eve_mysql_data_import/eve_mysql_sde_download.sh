@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conf="conf/eve_mysql_sde_download.conf"
+conf="/app/wreck/tasks/eve_mysql_data_import/conf/eve_mysql_sde_download.conf"
 
 if [ -f $conf ];then
   . $conf
@@ -27,31 +27,37 @@ fi
 
 # get latest md5_file
 echo "downloading latest md5sum for check"
-curl $curl_flags ./$md5_file $md5_url
+curl $curl_flags $md5_file $md5_url
 
 if [ ! -f $mysql_file ];then 
   echo "no mysql tar file found, downloading new"
-  curl $curl_flags ./$mysql_file $mysql_url
-  latest_md5_checksum=`cat $md5_file`
-  mysql_file_checksum=`/usr/bin/md5sum $mysql_file`
-  if [ "$latest_md5_checksum" = "$mysql_file_checksum" ];then  
+  curl $curl_flags $mysql_file $mysql_url
+  latest_md5_checksum=`cat $md5_file | awk '{print $1}'`
+  mysql_file_checksum=`/usr/bin/md5sum $mysql_file | awk '{print $1}'`
+echo $latest_md5_checksum
+echo $mysql_file_checksum
+  if [ "$latest_md5_checksum" == "$mysql_file_checksum" ];then  
      echo "checksums of newly downloaded tar file matches latest md5sum" 
-     tar xvfj $mysql_file 
+      bunzip2 $mysql_file
+      tar -C /app/wreck/tasks/eve_mysql_data_import -xvf $mysql_tarfile 
   else
      echo "something wrong, latest md5sum and mysql_tar file from $mysql_url remote server do not match"
      exit
   fi
 else
-  latest_md5_checksum=`cat $md5_file`
-  mysql_file_checksum=`/usr/bin/md5sum $mysql_file`
-  if [ "$latest_md5_checksum" = "$mysql_file_checksum" ];then
+  latest_md5_checksum=`cat $md5_file | awk '{print $1}'`
+  mysql_file_checksum=`/usr/bin/md5sum $mysql_file | awk '{print $1}'`
+  if [ "$latest_md5_checksum" == "$mysql_file_checksum" ];then
     echo "latest md5sum file matches previous mysql tar file, nothing to do"
     exit
   else
-    curl $curl_flags ./$mysql_file $mysql_url
-    mysql_file_checksum=`/usr/bin/md5sum $mysql_file`
-    if [ "$latest_md5_checksum" = "$mysql_file_checksum" ];then
-      tar xvfj $mysql_file
+    curl $curl_flags $mysql_file $mysql_url
+    mysql_file_checksum=`/usr/bin/md5sum $mysql_file | awk '{print $1}'`
+echo $latest_md5_checksum                        
+echo $mysql_file_checksum   
+    if [ "$latest_md5_checksum" == "$mysql_file_checksum" ];then
+      bunzip2 $mysql_file
+      tar -C /app/wreck/tasks/eve_mysql_data_import -xvf $mysql_tarfile 
     else 
       echo "something wrong, latest md5sum and mysql_tar file from $mysql_url remote server do no match"
       exit
@@ -59,12 +65,12 @@ else
   fi
 fi
 #   
-mysql_container=`docker ps --format '{{.Names}}' --filter "name=wreck_mysql" --filter "status=running"`
-if [ $mysql_container ];then
+#mysql_container=`docker ps --format '{{.Names}}' --filter "name=wreck_mysql" --filter "status=running"`
+#if [ $mysql_container ];then
   echo "running import, latest eve mysql sde -> local wreck_mysql db container"
-  docker exec -i mysql sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" $MYSQL_DATABASE' < $sde_dir/$sde_file
+  mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" $MYSQL_DATABASE < /app/wreck/tasks/eve_mysql_data_import/sde*/sde*
   echo "sde import completed"
-else
-  echo "wreck_mysql container is not running, cannot import, exiting"
-  exit
-fi
+#else
+#  echo "wreck_mysql container is not running, cannot import, exiting"
+#  exit
+#fi
