@@ -70,6 +70,7 @@ fi
   echo "running import, latest eve mysql sde -> local wreck_mysql db container"
   mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" $MYSQL_DATABASE < /app/wreck/tasks/eve_mysql_data_import/sde*/sde*
   echo "sde import completed"
+  rm $mysql_tarfile
 #else
 #  echo "wreck_mysql container is not running, cannot import, exiting"
 #  exit
