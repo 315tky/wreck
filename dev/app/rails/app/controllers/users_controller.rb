@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     # need a rake task that gets all corp members populates Character
     # currently just relies on getting from Killmail
     @character = Character.find_by(name: user.name)
+    character_id = @character.character_id
+    @character_image = "#{character_id}" + ".jpeg"
   end
 
 end

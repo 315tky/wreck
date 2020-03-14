@@ -5,15 +5,18 @@ require 'mini_magick'
 
 class DownloadImage
 
-  def initialize(urls, dir)
-    @urls = urls
-    @dir  = dir
+  def initialize
+    corporation_id = 98473505 # !! fix me and set me by env var
+    @character_ids = Character.character_ids_by_corp(corporation_id)
+    @dir = "app/assets/images/"
+  end
+
+  def build_urls
+    urls = @character_ids.map { |id| "https://images.evetech.net/characters/#{id}/portrait?size=256"}
   end
 
   def each_url
-    # feed in urls like 'https://images.evetech.net/characters/95090365/portrait?size=256' in an array
-    # need to fix the path for the file write line below
-    @urls.each { |url| image_download(url, "#{@dir}" + "#{url.split('/').last}" + ".jpeg") }
+    build_urls.each { |url| image_download(url, "#{@dir}" + "#{url.split('/')[4]}" + ".jpeg") }
   end
 
   def image_download(url, target)

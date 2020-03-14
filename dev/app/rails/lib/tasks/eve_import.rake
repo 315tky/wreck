@@ -1,5 +1,6 @@
 
 require 'esi-get-recent-corp-kills.rb'
+require 'download_image.rb'
 
 namespace :eve_import do
 
@@ -12,6 +13,12 @@ namespace :eve_import do
     for_import = session.check_db(all_meta_killmails)
     all_killmails = session.get_killmail_details(for_import)
     session.import_killmail_details(all_killmails)
+  end
+
+  desc "download_character_portraits"
+  task :download_portraits => :environment do
+     dl = DownloadImage.new
+     dl.each_url
   end
 
   desc "get_characters_from_killmails"

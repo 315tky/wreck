@@ -2,11 +2,19 @@ class Character < ApplicationRecord
   require 'swagger_client'
 # 95090365 <- example character_id
 
-   def self.all_characters(corporation_id)
+   def self.character_ids_by_corp(corporation_id)
      self.where(corporation_id: corporation_id).pluck(:character_id)
    end
 
-
+   def self.check_character(character_id)
+     character = self.esi_lookup(character_id)
+     corp = character.corporation_id
+     if corp == 98473505  # !!! make this an ENV var !!!
+       return true
+     else
+       return false
+     end
+  end
 
    def self.character_import(characters_ids)
 

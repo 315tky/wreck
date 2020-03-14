@@ -13,24 +13,38 @@ class User < ApplicationRecord
        return false
      end
 
-     result = jwt_verify(token)
-     user   = self.find_by(name: result)
-
-     if result && user # If the eve access token is verified and they are already in the User table, just update login_status = true
-       user.update(login_status: true)
-       user.save!
-       @user = user
-       # update session and redirect to landing
-     elsif result # otherise if verified, ( but not in user table, add them )
-       user = self.create(name: result, login_status: true)
-       user.save!
-       @user = user
-       # update session and redirect to landing
-     else # not verified, and
+     result_hash      = jwt_verify(token)
+     user             = self.find_by(name: result_hash['name'])
+     eve_character_id = result_hash['sub'].split(':').last.to_i
+     if validate_users_corp(eve_character_id) == true
+       if result_hash && user # If the eve access token is verified and they are already in the User table, just update login_status = true
+         user.update(login_status: true)
+         user.save!
+         unless Character.find_by(character_id: eve_character_id)
+           Character.character_import([eve_character_id])
+         end
+         @user = user
+         # update session and redirect to landing
+       elsif result_hash # otherise if verified, ( but not in user table, add them )
+         user = self.create(name: result_hash['name'], login_status: true)
+         user.save!
+         unless Character.find_by(character_id: eve_character_id)
+           Character.character_import([eve_character_id])
+         end
+         @user = user
+         # update session and redirect to landing
+       else # not verified, and
+         return false
+         # redirect to landing page with a warning login failed,
+         # or not allowed to login
+       end
+     else
        return false
-       # redirect to landing page with a warning login failed,
-       # or not allowed to login
      end
+   end
+
+   def self.validate_users_corp(character_id)
+     Character.check_character(character_id)
    end
 
    def self.public_key_pem
@@ -48,8 +62,8 @@ class User < ApplicationRecord
      rescue StandardError
        return false
      end
-     if Character.find_by(name: key_hash['name']) && key_hash['iss'] == "login.eveonline.com" && Time.at(key_hash['exp']).utc > Time.now.utc
-       return key_hash['name']
+     if key_hash['iss'] == "login.eveonline.com" && Time.at(key_hash['exp']).utc > Time.now.utc
+       return key_hash
      else
       false
      end
