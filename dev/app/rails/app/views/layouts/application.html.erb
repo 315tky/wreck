@@ -24,15 +24,21 @@
               <span >Paranoia Overload Corporation</span>
             </div>
           </div>
-          <div class="level-left">
-             <div class="level-item">
-               <% if session[:current_user_id] %>
-               <%= link_to('Logout', users_logout_path, :class => "button is-light is-outlined") %>
-               <% else %>
-                 <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
-               <% end %>
-             </div>
-          </div>
+              <div class="level-left">
+                <% if session[:current_user_id] %>
+                  <div class="level-item">
+                    <%= content_for :navigation_to_corp %>
+                    <%= content_for :navigation_to_user %>
+                  </div>
+              <div class="level-item">
+                <%= link_to('Logout', users_logout_path, :class => "button is-light is-outlined") %>
+              </div>
+                <% else %>
+              <div class="level-item">
+                <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
+              </div>
+                <% end %>
+              </div>
         </nav>
      </div>
    </header>

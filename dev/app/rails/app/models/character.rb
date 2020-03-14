@@ -4,7 +4,7 @@ class Character < ApplicationRecord
 
    def self.all_characters(corporation_id)
      self.where(corporation_id: corporation_id).pluck(:character_id)
-   end   
+   end
 
 
 

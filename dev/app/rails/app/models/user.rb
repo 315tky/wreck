@@ -13,8 +13,8 @@ class User < ApplicationRecord
        return false
      end
 
-     result   = verify_jwt(token)
-     user = self.find_by(name: result)
+     result = jwt_verify(token)
+     user   = self.find_by(name: result)
 
      if result && user # If the eve access token is verified and they are already in the User table, just update login_status = true
        user.update(login_status: true)
@@ -41,14 +41,14 @@ class User < ApplicationRecord
      end
    end
 
-   def self.verify_jwt(token)
+   def self.jwt_verify(token)
      begin
        jwt = JWT.decode(token, public_key_pem, true, {algorithm: 'RS256'})
        key_hash = jwt.first
      rescue StandardError
        return false
      end
-     if Character.find_by(name: 'Takamori Saig0') && key_hash['iss'] == "login.eveonline.com" && Time.at(key_hash['exp']).utc > Time.now.utc
+     if Character.find_by(name: key_hash['name']) && key_hash['iss'] == "login.eveonline.com" && Time.at(key_hash['exp']).utc > Time.now.utc
        return key_hash['name']
      else
       false
