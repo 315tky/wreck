@@ -18,6 +18,9 @@ services:
         limits:
           memory: 1024m
     environment:
+      - CLIENT_ID
+      - CALLBACK_URL
+      - HOME_CORP_ID
       - BASE64_ENCODE
       - REFRESH_TOKEN
       - POKILL_PROD_USERNAME
@@ -48,6 +51,8 @@ services:
     build:
       context: ./tasks
       dockerfile: Dockerfile.tasks
+    ports:
+      - "443:443"
     deploy:
       resources:
         limits: 
@@ -78,7 +83,7 @@ services:
     volumes:
       - wreck_tmp_data:/app/wreck/tmp/sockets
       - /var/log/nginx:/var/log/nginx
-      - /app/wreck/public/assets:/app/wreck/public/assets
+      - /app/wreck/public:/app/wreck/public/
 
   wreck_pg_db:
     image: wreck_stage:postgres_latest
@@ -108,7 +113,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128m
+          memory: 512m
     environment:
       - MYSQL_DATABASE
       - MYSQL_ROOT_PASSWORD
@@ -116,6 +121,7 @@ services:
       - MYSQL_PASSWORD
     volumes:
       - wreck_mysql_data:/var/lib/mysql
+      - ./tasks/eve_mysql_data_import:/app/wreck/tasks/eve_mysql_data_import
 
 volumes:
   wreck_pg_data:
