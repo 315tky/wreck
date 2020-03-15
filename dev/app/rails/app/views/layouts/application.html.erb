@@ -6,8 +6,8 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
@@ -17,21 +17,50 @@
           <div class="level-left">
             <div class="level-item">
               <span class="icon">
-	        <i class="fas fa-rocket"> </i>
+	              <i class="fas fa-rocket"> </i>
               </span>
             </div>
-	    <div class="level-item"> <span >Paranoia Overload Corporation</span> </div>
+	          <div class="level-item">
+              <span >Paranoia Overload Corporation</span>
+            </div>
           </div>
+              <div class="level-left">
+                <% if session[:current_user_id] %>
+                  <div class="level-item">
+                    <%= content_for :navigation_to_corp %>
+                    <%= content_for :navigation_to_user %>
+                  </div>
+              <div class="level-item">
+                <%= link_to('Logout', users_logout_path, :class => "button is-light is-outlined") %>
+              </div>
+                <% else %>
+              <div class="level-item">
+                <%= link_to('EVE SSO Login', "https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=#{ENV['CALLBACK_URL']}&client_id=#{ENV['CLIENT_ID']}&scope=esi-characters.read_standings.v1&state=thisistheuniquestring", :class => "button is-light is-outlined") %>
+              </div>
+                <% end %>
+              </div>
         </nav>
      </div>
    </header>
+   <% if notice %>
    <section class="section">
      <div class="container">
-       <%= yield %>
+       <div class="columns">
+         <div class="column"></div>
+         <div class="column">
+           <div class="notification has-background-warning is-size-5 has-text-black">
+             <%= notice %>
+           </div>
+         </div>
+         <div class="column"></div>
+      </div>
      </div>
    </section>
+   <% else %>
+     <%= yield %>
+   <% end %>
    <footer class="footer">
-     <div class="container">
+     <div class="container is-fluid">
        <p class="level-item">
          <a href="https://github.com/315tky/wreck" target="_blank" class="button is-small is-light is-outlined">
            <span class="icon has-text-primary">

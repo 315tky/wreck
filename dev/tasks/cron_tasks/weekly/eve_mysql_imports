@@ -1,8 +1,13 @@
 #!/bin/sh
 ## This file, cron_tasks/weekly/eve_mysql_imports, is mounted on the cron docker container 
-LOG="/app/wreck/log/cron.log"
+LOG="/app/wreck/log/weekly_cron.log"
 CONTAINER="wreck_app_dev"
-echo "`date -Iseconds`: running weekly rake task eve_import:all_eve_mysql on $CONTAINER container, sleeping for 300s to avoid clash with other jobs" >> $LOG 2>&1 
-sleep 300 # stagger so we dont run at the same time as a 15min cronjob etc.. 
+
+echo "`date -Iseconds`: running eve_mysql_sde_download to download and import any new sde" >> $LOG 2>&1
+docker exec -i wreck_mysql_dev /app/wreck/tasks/eve_mysql_data_import/mysql-drop-tables >> $LOG 2>&1
+docker exec -i wreck_mysql_dev /app/wreck/tasks/eve_mysql_data_import/eve_mysql_sde_download.sh >> $LOG 2>&1
+
+echo "`date -Iseconds`: running rake eve_import:all_eve_mysql to pull data into postgres db" >> $LOG 2>&1
 docker exec $CONTAINER bin/rake eve_import:all_eve_mysql >> $LOG 2>&1
-echo "`date -Iseconds`: completed rake task eve_import:all_eve_mysql on $CONTAINER container" >> $LOG 2>&1
+
+echo "`date -Iseconds`: completed tasks on  $CONTAINER container" >> $LOG 2>&1

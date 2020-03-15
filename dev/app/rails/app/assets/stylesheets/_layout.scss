@@ -1,3 +1,4 @@
+$is-warning:orange;
 @import "bulma/bulma";
 body {
   display:flex;
@@ -6,11 +7,36 @@ body {
   min-height:-webkit-fill-available;
   background-color:$black;
 }
+
+.username {
+ color:white;
+}
+
 .header {
   font-size:24px;
   background-color:$black-bis;
   color:orange;
   padding:1rem 1.5rem;
+}
+
+.hero-body {
+  padding-top:1rem;
+  padding-bottom:0rem;
+  .container {
+    padding-bottom: 10rem;
+  }
+}
+
+.box {
+  background-color:$black-bis;
+}
+
+.content {
+  color: #974508;
+}
+
+.footer {
+  background-color:$black-bis;
 }
 .section {
   display:flex;

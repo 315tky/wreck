@@ -1,0 +1,24 @@
+<% content_for :navigation_to_corp do %>
+  <%= link_to('Corp', corporations_index_path, :class => "button is-light is-outlined") %>
+<% end %>
+<div class="section">
+  <div class="container">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-256x256">
+            <%= image_tag(@character_image) %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p><h2 style="color:#4b5320"><%= @character.name %></h2></p>
+            <p><span style="color:#b86604">Title:</span>      <%= @character.title %></p>
+            <p><span style="color:#b86604">Born:</span>       <%= @character.birthday.strftime("%I:%M %p %d/%m/%Y") %></p>
+            <p><span style="color:#b86604">Sec Status:</span> <%= @character.security_status.round(2) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

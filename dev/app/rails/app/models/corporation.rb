@@ -1,5 +1,6 @@
 class Corporation < ApplicationRecord
 
+# example corp id 98473505
 require 'swagger_client'
 
   def self.corporation_import(corporations_ids)

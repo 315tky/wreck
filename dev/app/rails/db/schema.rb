@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_032614) do
+ActiveRecord::Schema.define(version: 2020_03_08_081814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,14 @@ ActiveRecord::Schema.define(version: 2020_02_18_032614) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["solar_system_id"], name: "index_solarsystems_on_solar_system_id", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.boolean "login_status"
+    t.string "eve_sso_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

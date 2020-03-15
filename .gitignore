@@ -6,4 +6,7 @@ stage/app/rails/*
 dev/app/rails/tmp/cache/*
 dev/app/rails/tmp/development_secret.txt
 dev/app/rails/node_modules/*
+dev/app/rails/public/*
+dev/app/rails/app/assets/images/*
+stage/app/assets/images/*
 workshop/*

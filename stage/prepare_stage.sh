@@ -17,5 +17,6 @@ fi
 rbenv local 2.7.0
 cd ../stage/app/rails
 echo wq! | EDITOR="vi" RAILS_ENV=production bin/rails credentials:edit
+rm -rf public/*
 RAILS_ENV=production bin/rails assets:precompile
-scp public/assets/* /app/wreck/public/assets
+scp -r public/* /app/wreck/public/

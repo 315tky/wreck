@@ -11,7 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-$footer-background-color:#342E37;
 $footer-padding:1rem 1.5rem;
+$warning:orange;
+$dimensions:256;
 @import "bulma/bulma";
 @import "_layout";

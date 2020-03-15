@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TEMP_FILE_PATH='/app/wreck/tasks/eve_mysql_data_import/drop_all_tables.sql'
+#TEMP_FILE_PATH='./drop_all_tables.sql'
+
+echo "SET FOREIGN_KEY_CHECKS = 0;" > $TEMP_FILE_PATH
+( mysqldump --add-drop-table --no-data -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE | grep 'DROP TABLE' ) >> $TEMP_FILE_PATH
+echo "SET FOREIGN_KEY_CHECKS = 1;" >> $TEMP_FILE_PATH
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < $TEMP_FILE_PATH
+rm -f $TEMP_FILE_PATH
