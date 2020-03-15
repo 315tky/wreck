@@ -18,6 +18,9 @@ services:
         limits:
           memory: 1024m
     environment:
+      - CLIENT_ID
+      - CALLBACK_URL
+      - HOME_CORP_ID
       - BASE64_ENCODE
       - REFRESH_TOKEN
       - POKILL_DEV_USERNAME

@@ -35,7 +35,7 @@
               </div>
                 <% else %>
               <div class="level-item">
-                <button id="login" class="button is-light is-outlined">EVE SSO Login</button>
+                <%= link_to('EVE SSO Login', "https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=#{ENV['CALLBACK_URL']}&client_id=#{ENV['CLIENT_ID']}&scope=esi-characters.read_standings.v1&state=thisistheuniquestring", :class => "button is-light is-outlined") %>
               </div>
                 <% end %>
               </div>
