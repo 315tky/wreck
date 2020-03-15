@@ -1,9 +1,15 @@
 dev/.env
 dev/Old*
 dev/app/rails/log/*
+dev/app/rails/public/*
+dev/app/rails/app/assets/images
 stage/.env
 stage/app/rails/*
+stage/app/rails-*
+dev/tasks/eve_mysql_data_import/mysql-latest*
+dev/tasks/eve_mysql_data_import/archived*
 dev/app/rails/tmp/cache/*
+dev/app/rails/tmp/*
 dev/app/rails/tmp/development_secret.txt
 dev/app/rails/node_modules/*
 workshop/*
