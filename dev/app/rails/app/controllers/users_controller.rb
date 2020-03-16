@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     # currently just relies on getting from Killmail
     @character = Character.find_by(name: user.name)
     character_id = @character.character_id
-    @character_image = "#{character_id}" + ".jpeg"
+    @character_image = "#{character_id}" + ".jpg"
   end
 
 end
