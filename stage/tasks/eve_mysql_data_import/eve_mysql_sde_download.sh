@@ -64,7 +64,7 @@ fi
 #mysql_container=`docker ps --format '{{.Names}}' --filter "name=wreck_mysql" --filter "status=running"`
 #if [ $mysql_container ];then
   echo "running import, latest eve mysql sde -> local wreck_mysql db container"
-  mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" $MYSQL_DATABASE' < /app/wreck/tasks/eve_mysql_data_import/sde*/sde*
+  mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" $MYSQL_DATABASE < /app/wreck/tasks/eve_mysql_data_import/sde*/sde*
   echo "sde import completed"
 #else
 #  echo "wreck_mysql container is not running, cannot import, exiting"
