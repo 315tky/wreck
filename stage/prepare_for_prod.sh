@@ -15,6 +15,7 @@ docker push 315tky/wreck:mysql_latest
 
 echo "copy the precompiled assets to /app/wreck/public/assets on Prod host"
 echo "From Prod host, docker pull the 315/wreck images"
-echo "Copy the Wreck Prod dir over to Prod host"
+echo "Copy relevant files over, like updated docker-compose, tasks dir etc.."
+echo "edit .env if required"
 echo "cd wreck/ && docker-compose --compatibility up"
 

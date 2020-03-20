@@ -9,6 +9,10 @@ services:
         limits:
           memory: 1024m
     environment:
+      - RAILS_ENV
+      - CLIENT_ID
+      - CALLBACK_URL
+      - HOME_CORP_ID
       - BASE64_ENCODE
       - REFRESH_TOKEN
       - POKILL_PROD_USERNAME
@@ -24,10 +28,8 @@ services:
       - USERNAME
       - USERGROUP
       - HOMEDIR
-      - RAILS_ENV
-    command: bash -c "rails db:migrate && bundle exec puma -C config/puma.rb"
+    command: bash -c "RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rails db:migrate && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec puma -C config/puma.rb"
     volumes:
-      - ./tasks/eve_mysql_data_import:/app/wreck/lib/eve_mysql_data_import
       - /app/wreck/tmp/sockets:/app/wreck/tmp/sockets
     depends_on:
       - wreck_pg_db
@@ -70,7 +72,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128m
+          memory: 512m
     environment:
       - MYSQL_DATABASE
       - MYSQL_ROOT_PASSWORD
@@ -78,6 +80,7 @@ services:
       - MYSQL_PASSWORD
     volumes:
       - wreck_mysql_data:/var/lib/mysql
+      - ./tasks/eve_mysql_data_import:/app/wreck/tasks/eve_mysql_data_import 
 
 volumes:
   wreck_pg_data:
