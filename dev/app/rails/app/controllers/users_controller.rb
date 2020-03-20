@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_action :require_login
+
   def login
     begin
       @user = User.eve_login(params[:code])

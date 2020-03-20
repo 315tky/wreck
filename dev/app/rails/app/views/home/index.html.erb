@@ -1,4 +1,8 @@
-
+<% if session[:current_user_id] %>
+  <% content_for :navigation_to_user do %>
+    <%= link_to "#{@user_name}", users_path(session[:current_user_id]), :class => "button is-light is-outlined" %>
+  <% end %>
+<% end %>
 <div class="hero is-dark is-bold is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container">
