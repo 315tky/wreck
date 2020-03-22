@@ -3,16 +3,10 @@ require 'esi-get-recent-corp-kills.rb'
 require 'download_image.rb'
 
 namespace :eve_import do
-
-  corporation_id = 98473505 # paranoia overload eve corp id
-
+corporation_id = 98473505
   desc "get_killmails"
   task :killmails => :environment do
-    session = ImportKillmail.new
-    all_meta_killmails = session.get_corp_killmails_meta(corporation_id)
-    for_import = session.check_db(all_meta_killmails)
-    all_killmails = session.get_killmail_details(for_import)
-    session.import_killmail_details(all_killmails)
+    Killmail.get_corp_killmails(corporation_id)   #(ENV['HOME_CORP_ID'])
   end
 
   desc "download_character_portraits"
