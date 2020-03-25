@@ -1,0 +1,2 @@
+class KillmailsWithFinalBlowAttacker < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_081814) do
+ActiveRecord::Schema.define(version: 2020_03_25_092811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,4 +214,40 @@ ActiveRecord::Schema.define(version: 2020_03_08_081814) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
+  create_view "killmails_with_final_blow_attackers", sql_definition: <<-SQL
+      SELECT killmails.killmail_time,
+      characters.name AS victim_name,
+      corporations.name AS victims_corporation,
+      corporations.corporation_id AS victims_corporation_id,
+      alliances.name AS victims_alliance,
+      items.type_name AS victim_ship_name,
+      killmails.victim_damage_taken,
+      attackers.final_blow,
+      attackers.attacker_name,
+      attackers.attacker_ship_name AS attacker_ship,
+      attackers.damage_done,
+      attackers.attackers_corporation,
+      attackers.attackers_alliance
+     FROM ((((((killmails
+       LEFT JOIN ( SELECT killmail_attackers.final_blow,
+              killmail_attackers.damage_done,
+              killmail_attackers.killmail_id,
+              characters_1.name AS attacker_name,
+              corporations_1.name AS attackers_corporation,
+              corporations_1.corporation_id AS attacker_corporation_id,
+              alliances_1.name AS attackers_alliance,
+              items_1.type_name AS attacker_ship_name
+             FROM ((((killmail_attackers
+               LEFT JOIN characters characters_1 ON ((killmail_attackers.attacker_id = characters_1.character_id)))
+               LEFT JOIN corporations corporations_1 ON ((killmail_attackers.corporation_id = corporations_1.corporation_id)))
+               LEFT JOIN alliances alliances_1 ON ((killmail_attackers.alliance_id = alliances_1.alliance_id)))
+               LEFT JOIN items items_1 ON ((killmail_attackers.ship_type_id = items_1.item_type_id)))
+            WHERE (killmail_attackers.final_blow IS TRUE)) attackers ON ((killmails.killmail_id = attackers.killmail_id)))
+       LEFT JOIN characters ON ((killmails.victim_id = characters.character_id)))
+       LEFT JOIN corporations ON ((killmails.victim_corporation_id = corporations.corporation_id)))
+       LEFT JOIN alliances ON ((corporations.alliance_id = alliances.alliance_id)))
+       LEFT JOIN solarsystems ON ((killmails.solar_system_id = solarsystems.solar_system_id)))
+       LEFT JOIN items ON ((killmails.victim_ship_id = items.item_type_id)));
+  SQL
 end
