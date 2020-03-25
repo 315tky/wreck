@@ -2,8 +2,8 @@ class Killmail < ApplicationRecord
 
 require 'eve_esi_import'
 
-  scope :kills, -> { where.not(victim_corporation_id: 98473505) }
-  scope :losses, -> { where(victim_corporation_id: 98473505) }
+  scope :kills, -> { where.not(victim_corporation_id: ENV['HOME_CORP_ID']) }
+  scope :losses, -> { where(victim_corporation_id: ENV['HOME_CORP_ID']) }
 
   has_many :killmail_attackers, :primary_key => "killmail_id", :foreign_key => "killmail_id", dependent: :destroy
   has_many :killmail_items, :primary_key => "killmail_id", :foreign_key =>  "killmail_id", dependent: :destroy
