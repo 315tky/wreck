@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include Pagy::Backend
+
   layout 'application'
   before_action :set_layout_variables
 

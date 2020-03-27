@@ -6,19 +6,94 @@
     <div class="box">
       <article class="media">
         <div class="media-left">
-          <figure class="image is-256x256">
+          <figure class="image is-64x64">
             <%= image_tag(@character_image) %>
           </figure>
         </div>
         <div class="media-content">
           <div class="content">
-            <p><h2 style="color:#4b5320"><%= @character.name %></h2></p>
+            <p><h4 style="color:#4b5320"><%= @character.name %></h4></p>
             <p><span style="color:#b86604">Title:</span>      <%= @character.title %></p>
             <p><span style="color:#b86604">Born:</span>       <%= @character.birthday.strftime("%I:%M %p %d/%m/%Y") %></p>
             <p><span style="color:#b86604">Sec Status:</span> <%= @character.security_status.round(2) %></p>
           </div>
         </div>
       </div>
-    </div>
+   </div>
+</div>
+<div class="section">
+  <div class="container">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th class="is-primary" style="text-align:center" colspan="6">Your Final Blow Kills</th>
+        </tr>
+        <tr>
+          <th>Time</th>
+          <th>System</th>
+          <th>Victim</th>
+          <th>Corp</th>
+          <th>Victim Ship</th>
+          <th>Your Ship</th>
+        </tr>
+      </thead>
+      <body>
+        <% unless @kills_by_char == nil%>
+          <% @kills_by_char.each do |kill| %>
+           <tr>
+              <th><%= kill.killmail_time ||= "" %></th>
+              <th><%= kill.solar_system ||= "" %></th>
+              <th><%= kill.victim_name ||= "" %></th>
+              <th><%= kill.victims_corporation ||= "" %></th>
+              <th><%= kill.victim_ship_name ||= "" %></th>
+              <th><%= kill.attacker_ship ||= ""%></th>
+            </tr>
+          <% end %>
+          <% else %>
+          <tr>
+            <th colspan=5>You appear to have none, slacker</th>
+          </tr>
+          <% end %>
+      </body>
+    </table>
+    <%== pagy_bulma_nav(@pagy_kills) %>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th class="is-danger" style="text-align:center" colspan="6">Your losses</th>
+        </tr>
+        <tr>
+          <th>Time</th>
+          <th>System</th>
+          <th>Ship Lost</th>
+          <th>Final Blow</th>
+          <th>Attackers Ship</th>
+          <th>Attackers Corp</th>
+        </tr>
+      </thead>
+      <body>
+        <% if @losses_by_char %>
+          <% @losses_by_char.each do |kill| %>
+           <tr>
+              <th><%= kill.killmail_time ||= "" %></th>
+              <th><%= kill.solar_system ||= "" %></th>
+              <th><%= kill.victim_ship_name ||= "" %></th>
+              <th><%= kill.attacker_name ||= "" %></th>
+              <th><%= kill.attacker_ship ||= "" %></th>
+              <th><%= kill.attackers_corporation ||= "" %></th>
+            </tr>
+          <% end %>
+          <% else %>
+          <tr>
+            <th colspan=5>No losses. Try undocking</th>
+          </tr>
+          <% end %>
+      </body>
+    </table>
+    <%== pagy_bulma_nav(@pagy_losses) %>
   </div>
 </div>

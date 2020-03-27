@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_092811) do
+ActiveRecord::Schema.define(version: 2020_03_27_072609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,6 +217,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_092811) do
 
   create_view "killmails_with_final_blow_attackers", sql_definition: <<-SQL
       SELECT killmails.killmail_time,
+      solarsystems.system_name AS solar_system,
       characters.name AS victim_name,
       corporations.name AS victims_corporation,
       corporations.corporation_id AS victims_corporation_id,

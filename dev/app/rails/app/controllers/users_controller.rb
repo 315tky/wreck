@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @character = Character.find_by(name: user.name)
     character_id = @character.character_id
     @character_image = "#{character_id}" + ".jpg"
+    @pagy_kills, @kills_by_char = pagy(KillmailsWithFinalBlowAttacker.kills_by_char(@character.name))
+    @pagy_losses, @losses_by_char = pagy(KillmailsWithFinalBlowAttacker.losses_by_char(@character.name))
   end
-
 end

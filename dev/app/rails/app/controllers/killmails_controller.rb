@@ -1,0 +1,2 @@
+class KillmailsController < ApplicationController
+end

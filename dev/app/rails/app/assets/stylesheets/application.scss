@@ -13,6 +13,12 @@
  */
 $footer-padding:1rem 1.5rem;
 $warning:orange;
-$dimensions:256;
+$pagination-color:white;
+$pagination-disabled-color:white;
+$pagination-disabled-background-color:black;
+$pagination-current-color:black;
+$pagination-current-background-color:white;
+$pagination-current-border-color:white;
+$pagination-item-font-size:0.75em;
 @import "bulma/bulma";
 @import "_layout";

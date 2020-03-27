@@ -36,7 +36,7 @@ services:
       - USERNAME
       - USERGROUP
       - HOMEDIR
-    command: bash -c "yarn install --check-files && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rails db:migrate && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec puma -C config/puma.rb" 
+    command: bash -c "RUBYOPT='-W:no-deprecated -W:no-experimental' bundle install && yarn install --check-files && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rails db:migrate && RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec puma -C config/puma.rb" 
     # RUBYOPT to suppress warnings in ruby 2.7 for things that will change in ruby 3.0
     volumes:
       - ./app/rails:/app/wreck
