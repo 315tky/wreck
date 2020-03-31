@@ -1,0 +1,47 @@
+<% content_for :navigation_to_user do %>
+
+<div class="level-left">
+  <div class="level-item">
+   <%= link_to('My Kills', kills_path(@user_name), :class => "button is-outlined is-primary") %>
+  </div>
+  <div class="level-item">
+    <%= link_to "#{@user_name}", users_path(session[:current_user_id]), :class => "button is-light is-outlined" %>
+  </div>
+</div>
+<% end %>
+  <div class="table-container">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th class="is-danger" style="text-align:center" colspan="6">My losses</th>
+        </tr>
+        <tr>
+          <th class="is-info">Time</th>
+          <th class="is-info">System</th>
+          <th class="is-info">Ship Lost</th>
+          <th class="is-info">Final Blow</th>
+          <th class="is-info">Attackers Ship</th>
+          <th class="is-info">Attackers Corp</th>
+        </tr>
+      </thead>
+      <body>
+        <% if @losses_by_char %>
+          <% @losses_by_char.each do |kill| %>
+           <tr>
+              <th><%= kill.killmail_time ||= "" %></th>
+              <th><%= kill.solar_system ||= "" %></th>
+              <th><%= kill.victim_ship_name ||= "" %></th>
+              <th><%= kill.attacker_name ||= "" %></th>
+              <th><%= kill.attacker_ship ||= "" %></th>
+              <th><%= kill.attackers_corporation ||= "" %></th>
+            </tr>
+          <% end %>
+          <% else %>
+          <tr>
+            <th colspan=5>No losses. Try undocking</th>
+          </tr>
+          <% end %>
+      </body>
+    </table>
+  </div>
+  <%== pagy_bulma_nav(@pagy_losses) %>
