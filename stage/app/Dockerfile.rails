@@ -35,7 +35,7 @@ RUN chown -R $USERNAME:$USERGROUP /app/wreck
 # get rails code
 #COPY rails/ /app/wreck
 # changing source path to suit dockerhub automated builds
-COPY stage/app/rails/ /app/wreck
+COPY /dev/app/rails/ /app/wreck
 RUN yarn add bulma
 
 # install bundler and gem files using bundler
@@ -47,3 +47,5 @@ ENV RAILS_ENV production
 ENV RACK_ENV production
 #USER $USER_ID
 # Can maybe lose all the user and group stuff, especially in Prod.. need to test it without - nmd - 27th Feb 2020
+#
+RUN cd /app/wreck && echo wq! | EDITOR="vi" RAILS_ENV=production bin/rails credentials:edit
