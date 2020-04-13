@@ -48,7 +48,7 @@ services:
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
       - /app/wreck/log:/app/wreck/log
-      - ./tasks/cron_tasks/1min:/etc/periodic/hourly/:ro
+      - ./tasks/cron_tasks/hourly:/etc/periodic/hourly/:ro
       - ./tasks/cron_tasks/weekly:/etc/periodic/weekly/:ro
   wreck_pg_db:
     image: 315tky/wreck:postgres_latest
