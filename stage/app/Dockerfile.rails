@@ -8,11 +8,11 @@ ARG USERGROUP
 ARG HOMEDIR
 
 # adding the below to suit dockerhub automated builds
-ENV USER_ID=1001
-ENV GROUP_ID=1001
-ENV USERNAME=nath_dev
-ENV USERGROUP=nath_dev
-ENV HOMEDIR=/home/nath_dev
+#ENV USER_ID=1001
+#ENV GROUP_ID=1001
+#ENV USERNAME=nath_dev
+#ENV USERGROUP=nath_dev
+#ENV HOMEDIR=/home/nath_dev
 
 
 RUN groupadd --gid $GROUP_ID $USERNAME
@@ -33,9 +33,9 @@ WORKDIR /app/wreck
 RUN chown -R $USERNAME:$USERGROUP /app/wreck
 
 # get rails code
-#COPY rails/ /app/wreck
+COPY rails/ /app/wreck
 # changing source path to suit dockerhub automated builds
-COPY /dev/app/rails/ /app/wreck
+#COPY /dev/app/rails/ /app/wreck
 RUN yarn add bulma
 
 # install bundler and gem files using bundler
@@ -48,4 +48,5 @@ ENV RACK_ENV production
 #USER $USER_ID
 # Can maybe lose all the user and group stuff, especially in Prod.. need to test it without - nmd - 27th Feb 2020
 #
-RUN cd /app/wreck && echo wq! | EDITOR="vi" RAILS_ENV=production bin/rails credentials:edit
+# uncomment below if using dockerhub automated builds
+#RUN cd /app/wreck && echo wq! | EDITOR="vi" RAILS_ENV=production bin/rails credentials:edit
